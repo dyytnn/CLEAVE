@@ -1,0 +1,18 @@
+# TEMPO T7: clip-level masked-frame reconstruction pretraining, ResNet-18 + Mamba (selective-SSM) temporal head --
+# pairs with the T8 rung to see whether the pretext task benefits from a different temporal head architecture.
+# PYTHONPATH=src python scripts/pretrain_video_mae.py --config configs/mae/video_mae_resnet18_mamba.yaml
+run_id: video_mae_resnet18_mamba
+seed: 0
+manifest: data/derived/nantes_manifest_F0.csv
+backbone: {name: resnet18, pretrained: true}
+head: {name: mamba, hidden: 512, layers: 4}
+pretrain:
+  epochs: 8
+  batch_size: 12
+  clip_len: 8
+  clips_per_epoch: 4000
+  resize: 250
+  crop: 224
+  target_size: 16
+  mask_ratio: 0.5
+  num_workers: 12

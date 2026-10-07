@@ -1,0 +1,5 @@
+experiments:
+- config: configs/h7/v38/resnet18_transformer_L16_crossfocal7_evalfix_grouped_v2_trainclean3.yaml
+  seed: 0
+- config: configs/h7/v38/resnet18_transformer_L16_crossfocal7_evalfix_grouped_v2_trainclean3.yaml
+  seed: 1

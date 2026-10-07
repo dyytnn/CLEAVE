@@ -1,0 +1,7 @@
+experiments:
+- config: configs/h7/oof_audit/resnet18_none_oof_audit_k0.yaml
+  seed: 0
+- config: configs/h7/oof_audit/resnet18_none_oof_audit_k1.yaml
+  seed: 0
+- config: configs/h7/oof_audit/resnet18_none_oof_audit_k2.yaml
+  seed: 0

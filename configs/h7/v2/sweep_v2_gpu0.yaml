@@ -1,0 +1,11 @@
+# half of sweep_v2 for GPU0 (generated)
+experiments:
+  - {config: configs/h7/resnet18_lstm_L4_split0.yaml, seed: 1}
+  - {config: configs/h7/resnet50_lstm_L8_split0.yaml, seed: 1}
+  - {config: configs/h7/resnet18_lstm_L4_multifocal3_split0.yaml, seed: 1}
+  - {config: configs/h7/resnet18_tcn_L16_split0.yaml, seed: 1}
+  - {config: configs/h7/v2/resnet18_transformer_L16_adamw_split0.yaml, seed: 0}
+  - {config: configs/h7/v2/resnet18_lstm_L4_split1.yaml, seed: 0}
+  - {config: configs/h7/v2/resnet18_lstm_L4_split3.yaml, seed: 0}
+  - {config: configs/h7/v2/resnet18_lstm_L4_multifocal3_split1.yaml, seed: 0}
+  - {config: configs/h7/v2/resnet18_lstm_L4_multifocal3_split3.yaml, seed: 0}

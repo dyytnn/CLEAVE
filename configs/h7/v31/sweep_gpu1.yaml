@@ -1,0 +1,9 @@
+experiments:
+- config: configs/h7/v31/gated_fusion_src0.yaml
+  seed: 0
+- config: configs/h7/v31/combined_smooth_src1.yaml
+  seed: 1
+- config: configs/h7/v31/duration_hazard_src1.yaml
+  seed: 1
+- config: configs/h7/v31/gated_fusion_src2.yaml
+  seed: 2

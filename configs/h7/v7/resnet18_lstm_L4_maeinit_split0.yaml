@@ -1,0 +1,9 @@
+# H7 v7 (T7 finetune): ResNet-18+LSTM initialised from the clip-level MAE pretraining (configs/mae/video_mae_resnet18_lstm.yaml)
+# instead of plain ImageNet -- compare against resnet18_lstm_L4_split0 (ImageNet init, 3 seeds already in v1/v2).
+inherits: configs/h7/_base.yaml
+cfg:
+  experiment:
+    id: resnet18_lstm_L4_maeinit_split0
+    tags: [pretrain, videomae, modern]
+  model:
+    backbone: {name: resnet18, pretrained: false, init_from: runs/mae/video_mae_resnet18_lstm/backbone.pt}

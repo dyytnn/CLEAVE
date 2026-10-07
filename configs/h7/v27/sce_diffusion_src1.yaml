@@ -1,0 +1,14 @@
+# v27 sce_diffusion, matched source seed 1. Single change: label-space diffusion.
+inherits: configs/h7/v27/_sce_diffusion.yaml
+cfg:
+  experiment:
+    id: v27_sce_diffusion_src1
+    seed: 1
+    tags: [v27, sce-diffusion, matched-source-seed-1, trainval-only]
+    notes: label-space diffusion adds a sequence prior beyond SCE
+  data:
+    feature_cache: runs/h7/v26/features_seed1
+  model:
+    embryodiff:
+      eval_seed: 27001
+

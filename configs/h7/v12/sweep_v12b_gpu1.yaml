@@ -1,0 +1,10 @@
+# v12b: seeds 1,2 on folds 1-4 (GPU1 half)
+experiments:
+  - {config: configs/h7/v11/resnet18_transformer_L16_crossfocal7_evalfix_split1.yaml, seed: 2}
+  - {config: configs/h7/v11/resnet18_transformer_L16_crossfocal7_evalfix_split2.yaml, seed: 2}
+  - {config: configs/h7/v11/resnet18_transformer_L16_crossfocal7_evalfix_split3.yaml, seed: 2}
+  - {config: configs/h7/v11/resnet18_transformer_L16_crossfocal7_evalfix_split4.yaml, seed: 2}
+  - {config: configs/h7/v2/resnet18_lstm_L4_split1.yaml, seed: 2}
+  - {config: configs/h7/v2/resnet18_lstm_L4_split2.yaml, seed: 2}
+  - {config: configs/h7/v2/resnet18_lstm_L4_split3.yaml, seed: 2}
+  - {config: configs/h7/v2/resnet18_lstm_L4_split4.yaml, seed: 2}

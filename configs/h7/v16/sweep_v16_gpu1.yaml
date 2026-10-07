@@ -1,0 +1,8 @@
+# v16 Stage 1 (GPU1): C cross-focal 20 epochs x3; B spatial focus-adaptive + 448 px x3.
+experiments:
+  - {config: configs/h7/v16/resnet18_transformer_L16_crossfocal7_e20_evalfix_split0.yaml, seed: 0}
+  - {config: configs/h7/v16/resnet18_transformer_L16_crossfocal7_e20_evalfix_split0.yaml, seed: 1}
+  - {config: configs/h7/v16/resnet18_transformer_L16_crossfocal7_e20_evalfix_split0.yaml, seed: 2}
+  - {config: configs/h7/v16/resnet18_transformer_L16_focalattn_spatial_hires448_e20_evalfix_split0.yaml, seed: 0}
+  - {config: configs/h7/v16/resnet18_transformer_L16_focalattn_spatial_hires448_e20_evalfix_split0.yaml, seed: 1}
+  - {config: configs/h7/v16/resnet18_transformer_L16_focalattn_spatial_hires448_e20_evalfix_split0.yaml, seed: 2}

@@ -1,0 +1,189 @@
+{
+ "threshold": 0.45,
+ "min_configs": 5,
+ "n_videos_scanned": 375,
+ "n_flagged": 19,
+ "flagged": [
+  {
+   "video": "EJ393-3",
+   "n_configs": 7,
+   "best_acc": 0.0,
+   "best_config": "r2plus1d_L8_grouped_v1",
+   "median_acc": 0.0,
+   "worst_acc": 0.0
+  },
+  {
+   "video": "CC938-4",
+   "n_configs": 8,
+   "best_acc": 0.07053469852104664,
+   "best_config": "resnet18_lstm_L4_split3",
+   "median_acc": 0.02161547212741752,
+   "worst_acc": 0.006825938566552901
+  },
+  {
+   "video": "LV683-2-8",
+   "n_configs": 70,
+   "best_acc": 0.16152450090744103,
+   "best_config": "kinetic_cnn_lstm_L4_split0",
+   "median_acc": 0.039927404718693285,
+   "worst_acc": 0.0
+  },
+  {
+   "video": "DRL1048-1",
+   "n_configs": 63,
+   "best_acc": 0.16666666666666666,
+   "best_config": "resnet18_mamba_L16_multifocal3_split0",
+   "median_acc": 0.047720797720797715,
+   "worst_acc": 0.0
+  },
+  {
+   "video": "RM126-5",
+   "n_configs": 8,
+   "best_acc": 0.27328431372549017,
+   "best_config": "resnet18_transformer_L16_crossfocal7_recipe_e20_evalfix_split4",
+   "median_acc": 0.2034313725490196,
+   "worst_acc": 0.08088235294117647
+  },
+  {
+   "video": "RC545-2-9",
+   "n_configs": 8,
+   "best_acc": 0.32363636363636367,
+   "best_config": "resnet18_transformer_L16_crossfocal7_evalfix_split1",
+   "median_acc": 0.2866666666666666,
+   "worst_acc": 0.24727272727272728
+  },
+  {
+   "video": "CJ261-10",
+   "n_configs": 13,
+   "best_acc": 0.35477582846003897,
+   "best_config": "resnet18_none_split3",
+   "median_acc": 0.2573099415204678,
+   "worst_acc": 0.21052631578947367
+  },
+  {
+   "video": "BC396-1",
+   "n_configs": 15,
+   "best_acc": 0.355119825708061,
+   "best_config": "resnet18_lstm_L4_grouped_v1",
+   "median_acc": 0.2962962962962963,
+   "worst_acc": 0.25272331154684097
+  },
+  {
+   "video": "RA803-4",
+   "n_configs": 8,
+   "best_acc": 0.35727109515260325,
+   "best_config": "resnet18_transformer_L16_crossfocal7_evalfix_split2",
+   "median_acc": 0.334230999401556,
+   "worst_acc": 0.24775583482944344
+  },
+  {
+   "video": "EH315-3",
+   "n_configs": 12,
+   "best_acc": 0.37124060150375937,
+   "best_config": "resnet18_lstm_L4_embryodiff_split",
+   "median_acc": 0.3198621553884712,
+   "worst_acc": 0.2518796992481203
+  },
+  {
+   "video": "RM126-6",
+   "n_configs": 8,
+   "best_acc": 0.3716759431045145,
+   "best_config": "resnet18_transformer_L16_crossfocal7_evalfix_split1",
+   "median_acc": 0.35745207173778604,
+   "worst_acc": 0.32838589981447125
+  },
+  {
+   "video": "DC307-1",
+   "n_configs": 63,
+   "best_acc": 0.3841719077568135,
+   "best_config": "resnet18_diffactlite_L16_split0",
+   "median_acc": 0.27201257861635225,
+   "worst_acc": 0.04716981132075472
+  },
+  {
+   "video": "GA664-8",
+   "n_configs": 10,
+   "best_acc": 0.3859338061465721,
+   "best_config": "resnet18_lstm_L4_split1",
+   "median_acc": 0.2895981087470449,
+   "worst_acc": 0.2154255319148936
+  },
+  {
+   "video": "CJ261-6",
+   "n_configs": 5,
+   "best_acc": 0.38930817610062896,
+   "best_config": "resnet50_lstm_L8_grouped_v1",
+   "median_acc": 0.34591194968553457,
+   "worst_acc": 0.33459119496855344
+  },
+  {
+   "video": "DHDPI042-6",
+   "n_configs": 10,
+   "best_acc": 0.3936624009750152,
+   "best_config": "resnet18_transformer_L16_evalfix_split4",
+   "median_acc": 0.3238878732480195,
+   "worst_acc": 0.21023765996343693
+  },
+  {
+   "video": "BC254-1",
+   "n_configs": 10,
+   "best_acc": 0.3953488372093023,
+   "best_config": "resnet18_lstm_L4_split2",
+   "median_acc": 0.3717948717948718,
+   "worst_acc": 0.3559928443649374
+  },
+  {
+   "video": "AAL839-6",
+   "n_configs": 7,
+   "best_acc": 0.4080882352941176,
+   "best_config": "resnet18_lstm_L4_grouped_v1",
+   "median_acc": 0.39828431372549017,
+   "worst_acc": 0.3370098039215687
+  },
+  {
+   "video": "GM456-3",
+   "n_configs": 10,
+   "best_acc": 0.414985590778098,
+   "best_config": "r2plus1d_L8_split2",
+   "median_acc": 0.32372718539865514,
+   "worst_acc": 0.17963496637848222
+  },
+  {
+   "video": "DSE41-2",
+   "n_configs": 8,
+   "best_acc": 0.43015521064301554,
+   "best_config": "r2plus1d_L8_split1",
+   "median_acc": 0.3056171470805617,
+   "worst_acc": 0.2039911308203991
+  }
+ ],
+ "known_outliers": [
+  "CC938-4",
+  "DRL1048-1",
+  "LV683-2-8"
+ ],
+ "known_recovered": [
+  "CC938-4",
+  "DRL1048-1",
+  "LV683-2-8"
+ ],
+ "known_missed": [],
+ "new": [
+  "AAL839-6",
+  "BC254-1",
+  "BC396-1",
+  "CJ261-10",
+  "CJ261-6",
+  "DC307-1",
+  "DHDPI042-6",
+  "DSE41-2",
+  "EH315-3",
+  "EJ393-3",
+  "GA664-8",
+  "GM456-3",
+  "RA803-4",
+  "RC545-2-9",
+  "RM126-5",
+  "RM126-6"
+ ]
+}

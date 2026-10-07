@@ -1,0 +1,4 @@
+# T11 backbone fair test (GPU0 half). Queue after v13.
+experiments:
+  - {config: configs/h7/v14/resnet18_transformer_L16_crossfocal7_fair_evalfix_split0.yaml, seed: 0}
+  - {config: configs/h7/v14/swin_t_transformer_L16_crossfocal7_fair_evalfix_split0.yaml, seed: 0}

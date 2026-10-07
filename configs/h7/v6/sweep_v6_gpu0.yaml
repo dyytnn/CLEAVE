@@ -1,0 +1,7 @@
+# half of sweep_v6 for GPU0 (generated)
+experiments:
+  - {config: configs/h7/v6/resnet18_transformer_relpos_L16_split0.yaml, seed: 0}
+  - {config: configs/h7/v6/resnet18_transformer_relpos_L16_split0.yaml, seed: 2}
+  - {config: configs/h7/v6/resnet18_lstm_L4_boundaryloss_split0.yaml, seed: 0}
+  - {config: configs/h7/v6/resnet18_lstm_L4_boundaryloss_split0.yaml, seed: 2}
+  - {config: configs/h7/v6/resnet18_lstm_L4_embryodiff_split.yaml, seed: 1}

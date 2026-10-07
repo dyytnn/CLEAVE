@@ -1,0 +1,62 @@
+# v27 EmbryoDiff architecture adaptation. Single change from v26: replace the
+# full-video MS-TCN with the paper-specified six-layer semantic condition encoder.
+inherits: configs/h7/v26/_base.yaml
+builder: cached_video_validation_training
+cfg:
+  experiment:
+    id: v27_base_do_not_run
+    out_root: runs/h7/v27
+    tags: [v27, embryodiff-adaptation, sce, patient-grouped, trainval-only]
+    notes: six-layer semantic condition encoder on frozen v26 visual features
+  data:
+    input_mode: visual
+    sequence_mode: full
+  model:
+    type: embryodiff_adapter
+    backbone:
+      name: cached_features
+    head:
+      name: none
+    embryodiff:
+      variant: sce
+      hidden: 96
+      layers: 6
+      intermediate_layers: [2, 4, 6]
+      attention_reduction: 2
+      diffusion_dim: 128
+      diffusion_blocks: 8
+      diffusion_heads: 4
+      diffusion_train_steps: 1000
+      inference_steps: 25
+      selection_steps: 1
+      label_scale: 0.1
+      dropout: 0.5
+      eval_seed: 27000
+    num_classes: 16
+    dropout: 0.5
+  loss:
+    name: embryodiff_objective
+    semantic_weight: 0.8
+    smooth_weight: 0.3
+    boundary_weight: 0.5
+    diffusion_weight: 1.0
+    truncation: 4.0
+  optimizer:
+    name: adamw
+    lr: 0.0001
+    weight_decay: 0.01
+  scheduler:
+    name: cosine
+    eta_min: 0.0
+  training:
+    epochs: 100
+    batch_size: 1
+    eval_len: 1024
+    eval_stride: 1024
+    eval_batch_size: 1024
+    num_workers: 0
+    amp: true
+    monitor: p_t
+    grad_accum: 8
+    swa_last: 0
+

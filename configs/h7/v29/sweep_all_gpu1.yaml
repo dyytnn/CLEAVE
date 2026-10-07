@@ -1,0 +1,19 @@
+experiments:
+- config: configs/h7/v29/onset_linear_src0.yaml
+  seed: 0
+- config: configs/h7/v29/query_global_src0.yaml
+  seed: 0
+- config: configs/h7/v29/query_refine_src0.yaml
+  seed: 0
+- config: configs/h7/v29/onset_linear_src1.yaml
+  seed: 1
+- config: configs/h7/v29/query_global_src1.yaml
+  seed: 1
+- config: configs/h7/v29/query_refine_src1.yaml
+  seed: 1
+- config: configs/h7/v29/onset_linear_src2.yaml
+  seed: 2
+- config: configs/h7/v29/query_global_src2.yaml
+  seed: 2
+- config: configs/h7/v29/query_refine_src2.yaml
+  seed: 2

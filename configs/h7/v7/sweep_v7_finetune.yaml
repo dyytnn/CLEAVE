@@ -1,0 +1,4 @@
+# v7 finetune half (run only after both configs/mae/video_mae_*.yaml pretrains have produced backbone.pt).
+experiments:
+  - {config: configs/h7/v7/resnet18_lstm_L4_maeinit_split0.yaml, seed: 0}
+  - {config: configs/h7/v7/resnet18_mamba_L16_maeinit_split0.yaml, seed: 0}

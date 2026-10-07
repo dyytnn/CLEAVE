@@ -1,0 +1,19 @@
+experiments:
+- config: configs/h7/v32/onset_linear_rep_src0.yaml
+  seed: 3
+- config: configs/h7/v32/onset_linear_rep_src1.yaml
+  seed: 3
+- config: configs/h7/v32/onset_linear_rep_src2.yaml
+  seed: 3
+- config: configs/h7/v32/onset_linear_rep_src0.yaml
+  seed: 4
+- config: configs/h7/v32/onset_linear_rep_src1.yaml
+  seed: 4
+- config: configs/h7/v32/onset_linear_rep_src2.yaml
+  seed: 4
+- config: configs/h7/v32/onset_linear_rep_src0.yaml
+  seed: 5
+- config: configs/h7/v32/onset_linear_rep_src1.yaml
+  seed: 5
+- config: configs/h7/v32/onset_linear_rep_src2.yaml
+  seed: 5

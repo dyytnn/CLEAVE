@@ -1,0 +1,63 @@
+{
+  "experiment": {
+    "id": "resnet18_lstm_L4_split3",
+    "seed": 0,
+    "out_root": "runs/h7",
+    "tags": [
+      "official",
+      "reference",
+      "folds"
+    ]
+  },
+  "data": {
+    "dataset": "nantes_clips",
+    "manifest": "data/derived/nantes_manifest_F0.csv",
+    "split": "data/splits/nantes_official/split3.csv",
+    "plane": "embryo_dataset",
+    "planes": null,
+    "resize": 250,
+    "crop": 224,
+    "clip_len": 4,
+    "clips_per_video": "auto",
+    "official_offset": false,
+    "cache_dir": "data/cache/nantes_250"
+  },
+  "model": {
+    "type": "seq_kinetic",
+    "backbone": {
+      "name": "resnet18",
+      "pretrained": true
+    },
+    "head": {
+      "name": "lstm",
+      "hidden": 1024,
+      "layers": 2
+    },
+    "num_classes": 16,
+    "dropout": 0.5
+  },
+  "loss": {
+    "name": "ce"
+  },
+  "optimizer": {
+    "name": "sgd",
+    "lr": 0.001,
+    "momentum": 0.9,
+    "weight_decay": 0.0
+  },
+  "scheduler": {
+    "name": "none"
+  },
+  "training": {
+    "epochs": 10,
+    "batch_size": 10,
+    "eval_len": 150,
+    "eval_batch_size": 150,
+    "num_workers": 8,
+    "amp": true,
+    "monitor": "p_v"
+  },
+  "decoder": {
+    "name": "viterbi"
+  }
+}

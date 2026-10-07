@@ -1,0 +1,4 @@
+# retrain of the 4 multifocal fold runs (planes were silently dropped by a shallow merge; see make_h7_configs.py)
+experiments:
+  - {config: configs/h7/v2/resnet18_lstm_L4_multifocal3_split1.yaml, seed: 0}
+  - {config: configs/h7/v2/resnet18_lstm_L4_multifocal3_split3.yaml, seed: 0}

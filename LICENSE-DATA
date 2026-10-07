@@ -1,0 +1,9 @@
+The data artefacts in data/ and results/ of this repository (splits, defect log, label cut-offs, alignment tables,
+per-run result files and derived tables) are licensed under the Creative Commons Attribution 4.0 International
+licence (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/
+
+Copyright (c) 2026 Tan Nguyen, Ngoc Thanh Sang Vu
+
+They are derived from the Nantes time-lapse embryo dataset (Gomez et al., Data in Brief 42, 108258, 2022;
+https://doi.org/10.5281/zenodo.7912264). That dataset's images and annotations are not redistributed here and remain
+under their original licence.

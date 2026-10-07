@@ -1,0 +1,65 @@
+{
+  "experiment": {
+    "id": "r2plus1d_L8_grouped_v1",
+    "seed": 0,
+    "out_root": "runs/h7",
+    "tags": [
+      "3dcnn",
+      "official_resnet3d",
+      "patient_grouped",
+      "v35"
+    ],
+    "notes": "recipe inherited verbatim from r2plus1d_L8_split0; only data.split differs"
+  },
+  "data": {
+    "dataset": "nantes_clips",
+    "manifest": "data/derived/nantes_manifest_F0.csv",
+    "split": "data/splits/nantes_grouped_v1.json",
+    "plane": "embryo_dataset",
+    "planes": null,
+    "resize": 125,
+    "crop": 112,
+    "clip_len": 8,
+    "clips_per_video": "auto",
+    "official_offset": false,
+    "cache_dir": null
+  },
+  "model": {
+    "type": "r2plus1d",
+    "backbone": {
+      "name": "resnet18",
+      "pretrained": true
+    },
+    "head": {
+      "name": "lstm",
+      "hidden": 1024,
+      "layers": 2
+    },
+    "num_classes": 16,
+    "dropout": 0.5
+  },
+  "loss": {
+    "name": "ce"
+  },
+  "optimizer": {
+    "name": "sgd",
+    "lr": 0.001,
+    "momentum": 0.9,
+    "weight_decay": 0.0
+  },
+  "scheduler": {
+    "name": "none"
+  },
+  "training": {
+    "epochs": 10,
+    "batch_size": 8,
+    "eval_len": 64,
+    "eval_batch_size": 150,
+    "num_workers": 8,
+    "amp": true,
+    "monitor": "p_v"
+  },
+  "decoder": {
+    "name": "viterbi"
+  }
+}

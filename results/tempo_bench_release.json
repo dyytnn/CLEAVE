@@ -1,0 +1,564 @@
+{
+  "version": "tempo_bench_release_v3",
+  "dataset": "Nantes morphokinetic time-lapse (Zenodo record 7912264)",
+  "dataset_doi": "10.5281/zenodo.7912264",
+  "producer": "scripts/make_release_manifest.py (sole writer of this file)",
+  "excluded_videos": {
+    "reason": "100 % JPEG-truncated in every focal plane in the released archive",
+    "n": 52,
+    "source": "Zenodo record 7912264; identifiers of the video folders that fail to decode",
+    "video_ids": [
+      "ALR493-10",
+      "ALR493-6",
+      "BJ492-11",
+      "BJ492-8",
+      "BM256-1",
+      "BM256-4",
+      "BN1010-5",
+      "CA063-10",
+      "CA063-6",
+      "CA390-2",
+      "CA390-6",
+      "CA658-12",
+      "CA658-6",
+      "CA704-2",
+      "CS552-2",
+      "CS552-4",
+      "CZ594-1",
+      "CZ594-5",
+      "DH1012-1",
+      "DM1046-12",
+      "DV210-4",
+      "DV210-8",
+      "FM1017-5",
+      "GE1055-6",
+      "HE444-3",
+      "HE444-4",
+      "HH569-2",
+      "HH569-4",
+      "JV227-2",
+      "JV227-5",
+      "LD400-1",
+      "LD400-6",
+      "LS058-7",
+      "LS058-8",
+      "LTA908-2",
+      "MA1059-3",
+      "MRA165-6",
+      "MRA165-7T",
+      "PA916-1-10",
+      "PI1004-3",
+      "SC385-11",
+      "SC385-9",
+      "SK308-10",
+      "SK308-7",
+      "SK902-1-8",
+      "TD958-2-1",
+      "TN359-10",
+      "TN359-9",
+      "UL050-_10",
+      "UL050-_9",
+      "WA1014-3",
+      "ZL1077-1"
+    ]
+  },
+  "defect_log": {
+    "file": "data/qc/nantes_video_defects_v3.json",
+    "sha256": "d071557cc3a8ac3b72c239891e83ffb8a4bf9c6ef3a21cdc9b9ed5bf075101e4",
+    "n": 65,
+    "tiers": {
+      "A": "label-image mismatch: removed from training",
+      "B": "image artefact, label correct: kept (labels cut at cutoff_h)",
+      "C": "atypical biology: kept everywhere"
+    },
+    "status": "every video is kept in the released splits and the headline numbers; tier A is removed from training in nantes_grouped_v2_trainclean_v3; report results with and without tier A",
+    "categories": {
+      "timeline_mismatch": "A",
+      "no_division": "A",
+      "blank_throughout": "A",
+      "annotation_ahead": "A",
+      "embryo_removed": "B",
+      "dark_frames": "B",
+      "out_of_focus": "B",
+      "abrupt_cleavage": "C",
+      "heavy_fragmentation": "C"
+    },
+    "videos": {
+      "AAL839-6": {
+        "tier": "A",
+        "defects": [
+          "embryo_removed",
+          "timeline_mismatch"
+        ]
+      },
+      "AG782-6": {
+        "tier": "A",
+        "defects": [
+          "timeline_mismatch"
+        ]
+      },
+      "AL884-2": {
+        "tier": "A",
+        "defects": [
+          "timeline_mismatch"
+        ]
+      },
+      "AM365-7": {
+        "tier": "B",
+        "defects": [
+          "out_of_focus"
+        ]
+      },
+      "BC254-1": {
+        "tier": "A",
+        "defects": [
+          "timeline_mismatch"
+        ]
+      },
+      "BC277-10": {
+        "tier": "A",
+        "defects": [
+          "dark_frames",
+          "timeline_mismatch"
+        ]
+      },
+      "BC396-1": {
+        "tier": "A",
+        "defects": [
+          "heavy_fragmentation",
+          "timeline_mismatch"
+        ]
+      },
+      "BE327-2": {
+        "tier": "B",
+        "defects": [
+          "dark_frames",
+          "embryo_removed"
+        ]
+      },
+      "BG201-1": {
+        "tier": "B",
+        "defects": [
+          "dark_frames"
+        ]
+      },
+      "BL285-1-3": {
+        "tier": "A",
+        "defects": [
+          "timeline_mismatch"
+        ]
+      },
+      "BS777-8": {
+        "tier": "B",
+        "defects": [
+          "dark_frames"
+        ]
+      },
+      "BY829-1": {
+        "tier": "A",
+        "defects": [
+          "timeline_mismatch"
+        ]
+      },
+      "CC938-4": {
+        "tier": "A",
+        "defects": [
+          "annotation_ahead"
+        ]
+      },
+      "CJ261-10": {
+        "tier": "A",
+        "defects": [
+          "timeline_mismatch"
+        ]
+      },
+      "CJ261-6": {
+        "tier": "A",
+        "defects": [
+          "timeline_mismatch"
+        ]
+      },
+      "DC307-1": {
+        "tier": "A",
+        "defects": [
+          "out_of_focus",
+          "timeline_mismatch"
+        ]
+      },
+      "DHDPI042-3": {
+        "tier": "A",
+        "defects": [
+          "timeline_mismatch"
+        ]
+      },
+      "DHDPI042-6": {
+        "tier": "A",
+        "defects": [
+          "embryo_removed",
+          "timeline_mismatch"
+        ]
+      },
+      "DHDPI042-7": {
+        "tier": "A",
+        "defects": [
+          "no_division"
+        ]
+      },
+      "DHDPI042-8": {
+        "tier": "A",
+        "defects": [
+          "no_division"
+        ]
+      },
+      "DRL1048-1": {
+        "tier": "A",
+        "defects": [
+          "no_division"
+        ]
+      },
+      "DSE41-2": {
+        "tier": "B",
+        "defects": [
+          "abrupt_cleavage",
+          "out_of_focus"
+        ]
+      },
+      "DSM138-5": {
+        "tier": "B",
+        "defects": [
+          "dark_frames"
+        ]
+      },
+      "DV116-3": {
+        "tier": "B",
+        "defects": [
+          "embryo_removed"
+        ]
+      },
+      "EH315-3": {
+        "tier": "A",
+        "defects": [
+          "abrupt_cleavage",
+          "heavy_fragmentation",
+          "timeline_mismatch"
+        ]
+      },
+      "EH315-8": {
+        "tier": "A",
+        "defects": [
+          "timeline_mismatch"
+        ]
+      },
+      "EJ393-3": {
+        "tier": "A",
+        "defects": [
+          "blank_throughout"
+        ]
+      },
+      "FM864-7": {
+        "tier": "B",
+        "defects": [
+          "dark_frames"
+        ]
+      },
+      "FV709-11": {
+        "tier": "B",
+        "defects": [
+          "embryo_removed"
+        ]
+      },
+      "GA664-1": {
+        "tier": "A",
+        "defects": [
+          "timeline_mismatch"
+        ]
+      },
+      "GA664-4": {
+        "tier": "A",
+        "defects": [
+          "timeline_mismatch"
+        ]
+      },
+      "GA664-8": {
+        "tier": "A",
+        "defects": [
+          "timeline_mismatch"
+        ]
+      },
+      "GC340-1": {
+        "tier": "A",
+        "defects": [
+          "embryo_removed",
+          "timeline_mismatch"
+        ]
+      },
+      "GC340-10": {
+        "tier": "A",
+        "defects": [
+          "timeline_mismatch"
+        ]
+      },
+      "GC340-3": {
+        "tier": "A",
+        "defects": [
+          "timeline_mismatch"
+        ]
+      },
+      "GM456-3": {
+        "tier": "A",
+        "defects": [
+          "embryo_removed",
+          "no_division"
+        ]
+      },
+      "GS334-6": {
+        "tier": "A",
+        "defects": [
+          "timeline_mismatch"
+        ]
+      },
+      "GS490-7": {
+        "tier": "A",
+        "defects": [
+          "timeline_mismatch"
+        ]
+      },
+      "LM184-4": {
+        "tier": "B",
+        "defects": [
+          "embryo_removed"
+        ]
+      },
+      "LP284-3": {
+        "tier": "A",
+        "defects": [
+          "timeline_mismatch"
+        ]
+      },
+      "LV683-2-8": {
+        "tier": "A",
+        "defects": [
+          "no_division"
+        ]
+      },
+      "MAS203-4": {
+        "tier": "B",
+        "defects": [
+          "dark_frames"
+        ]
+      },
+      "MM445-2-2": {
+        "tier": "A",
+        "defects": [
+          "timeline_mismatch"
+        ]
+      },
+      "MM445-2-9": {
+        "tier": "A",
+        "defects": [
+          "timeline_mismatch"
+        ]
+      },
+      "OC110-5": {
+        "tier": "B",
+        "defects": [
+          "embryo_removed"
+        ]
+      },
+      "PC758-2": {
+        "tier": "A",
+        "defects": [
+          "timeline_mismatch"
+        ]
+      },
+      "PE863-4": {
+        "tier": "A",
+        "defects": [
+          "timeline_mismatch"
+        ]
+      },
+      "PE863-9": {
+        "tier": "A",
+        "defects": [
+          "timeline_mismatch"
+        ]
+      },
+      "PMDPI029-1-8": {
+        "tier": "B",
+        "defects": [
+          "embryo_removed"
+        ]
+      },
+      "PMDPI029-1-9": {
+        "tier": "B",
+        "defects": [
+          "out_of_focus"
+        ]
+      },
+      "PO13-3": {
+        "tier": "B",
+        "defects": [
+          "embryo_removed"
+        ]
+      },
+      "PS292-4": {
+        "tier": "A",
+        "defects": [
+          "timeline_mismatch"
+        ]
+      },
+      "QC267-8": {
+        "tier": "B",
+        "defects": [
+          "embryo_removed"
+        ]
+      },
+      "RA803-4": {
+        "tier": "A",
+        "defects": [
+          "timeline_mismatch"
+        ]
+      },
+      "RC545-2-5": {
+        "tier": "A",
+        "defects": [
+          "timeline_mismatch"
+        ]
+      },
+      "RC545-2-8": {
+        "tier": "A",
+        "defects": [
+          "timeline_mismatch"
+        ]
+      },
+      "RC545-2-9": {
+        "tier": "A",
+        "defects": [
+          "timeline_mismatch"
+        ]
+      },
+      "RM126-10": {
+        "tier": "A",
+        "defects": [
+          "timeline_mismatch"
+        ]
+      },
+      "RM126-4": {
+        "tier": "B",
+        "defects": [
+          "embryo_removed"
+        ]
+      },
+      "RM126-5": {
+        "tier": "C",
+        "defects": [
+          "heavy_fragmentation"
+        ]
+      },
+      "RM126-6": {
+        "tier": "A",
+        "defects": [
+          "embryo_removed",
+          "timeline_mismatch"
+        ]
+      },
+      "RM126-8": {
+        "tier": "B",
+        "defects": [
+          "embryo_removed"
+        ]
+      },
+      "RM126-9": {
+        "tier": "B",
+        "defects": [
+          "embryo_removed"
+        ]
+      },
+      "ST586-7": {
+        "tier": "B",
+        "defects": [
+          "embryo_removed"
+        ]
+      },
+      "TM312-2": {
+        "tier": "B",
+        "defects": [
+          "dark_frames"
+        ]
+      }
+    },
+    "label_cutoff": {
+      "file": "data/qc/nantes_label_cutoff_v3.json",
+      "sha256": "23deb3b2dc550cf1173320a5922f2b67fd14a44f55cc64dd42d4c7808b1822ea"
+    },
+    "timeline_audit": {
+      "file": "results/frame_timing/alignment_oof.csv",
+      "sha256": "f2dbd64d566cb67683242b519f7bc5e0a3540b2413551264dcc7feba76e2335b",
+      "producer": "scripts/audit_frame_timing.py"
+    },
+    "superseded": {
+      "file": "data/qc/nantes_video_defects_v1.json",
+      "sha256": "407c6666f8432eeffe92f478c6a0239d85c280baa5fd8fb6251b0fb90b62b3ff"
+    },
+    "inspected_by": "session inspection 2026-09-29; to be confirmed by an embryologist"
+  },
+  "grouping": {
+    "rule": "stseg.data.patient.patient_of; video names are <code>[-<cycle>]-<embryo>",
+    "levels": {
+      "couple": "embryo and cycle tokens stripped (the CLEAVE unit)",
+      "cycle": "embryo token only (what nantes_grouped_v1 used)"
+    },
+    "audit": "results/protocol_audit.json, produced by scripts/audit_protocol_splits.py"
+  },
+  "splits": {
+    "data/splits/nantes_grouped_v1.json": {
+      "sha256": "c99dc7b1be7225b84f70d28801464809ea9123d64cdeaa1a9c90be9a3b5ceb6a",
+      "bytes": 19688,
+      "note": "cycle-level grouping; the split every model in the paper is evaluated on",
+      "test_videos": 96,
+      "test_videos_with_couple_sibling_in_train": 1
+    },
+    "data/splits/nantes_grouped_v2.json": {
+      "sha256": "743e4149b60ae548b9484fb37fcec963d54208e234dc50d50d9474d85826f979",
+      "bytes": 19674,
+      "note": "couple-level grouping; the split CLEAVE recommends",
+      "test_videos": 89,
+      "test_videos_with_couple_sibling_in_train": 0
+    },
+    "data/splits/nantes_grouped_v2_trainclean_v1.json": {
+      "sha256": "a3670f585998a73a3d1691adb8c381d57330560d81df2c401a7f4252d5a118e5",
+      "bytes": 16279,
+      "note": "superseded: nantes_grouped_v2 minus every video of the first, untiered log; kept for the v36 retraining it was used in",
+      "test_videos": 89,
+      "test_videos_with_couple_sibling_in_train": 0
+    },
+    "data/splits/nantes_grouped_v2_trainclean_v3.json": {
+      "sha256": "6682359abef69b9a8a6dd351610e10b64403890ba9e92e76224ff602ef3995d5",
+      "bytes": 16313,
+      "note": "nantes_grouped_v2 with tier A of defect log v3 removed from train only (use with data/qc/nantes_label_cutoff_v3.json); val and test identical; the cleaned split CLEAVE recommends",
+      "test_videos": 89,
+      "test_videos_with_couple_sibling_in_train": 0
+    },
+    "data/splits/nantes_grouped_v2_trainclean_v2.json": {
+      "sha256": "f7521e68eb4887adc30538acf7cf28d1313acdb85a53b707c5a310c4afe7b244",
+      "bytes": 16402,
+      "note": "superseded: built from an in-sample timeline audit that could not see mismatches among its own classifier's training videos",
+      "test_videos": 89,
+      "test_videos_with_couple_sibling_in_train": 0
+    },
+    "data/splits/nantes_siblingleak_clean_v1.json": {
+      "sha256": "b58aebae3f88e1180676cf384229807b39e934edfdcfff5d5c23b2af36e10754",
+      "bytes": 14789,
+      "note": "paired sibling-leak design, clean arm",
+      "test_videos": 82,
+      "test_videos_with_couple_sibling_in_train": 0
+    },
+    "data/splits/nantes_siblingleak_leaky_v1.json": {
+      "sha256": "87260078019d8d32a93192ab1c40207c8bf93f6d3a2354dd2e70312752edd073",
+      "bytes": 14800,
+      "note": "paired sibling-leak design, leaky arm; identical val/test and training-set size to the clean arm",
+      "test_videos": 82,
+      "test_videos_with_couple_sibling_in_train": 41
+    }
+  }
+}

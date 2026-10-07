@@ -1,0 +1,5 @@
+# v22 retry (GPU0): divconsist arm crashed on autocast-unsafe BCELoss (fixed in losses.py); rerun after the fix.
+experiments:
+  - {config: configs/h7/v22/resnet18_transformer_L16_crossfocal7_recipe_divconsist_e20_evalfix_split0.yaml, seed: 0}
+  - {config: configs/h7/v22/resnet18_transformer_L16_crossfocal7_recipe_divconsist_e20_evalfix_split0.yaml, seed: 1}
+  - {config: configs/h7/v22/resnet18_transformer_L16_crossfocal7_recipe_divconsist_e20_evalfix_split0.yaml, seed: 2}

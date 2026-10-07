@@ -1,0 +1,10 @@
+# half of sweep_v4 for GPU0 (generated)
+experiments:
+  - {config: configs/h7/resnet18_none_split0.yaml, seed: 1}
+  - {config: configs/h7/v4/resnet18_none_split1.yaml, seed: 0}
+  - {config: configs/h7/v4/resnet18_none_split3.yaml, seed: 0}
+  - {config: configs/h7/r2plus1d_L8_split0.yaml, seed: 1}
+  - {config: configs/h7/v4/r2plus1d_L8_split1.yaml, seed: 0}
+  - {config: configs/h7/v4/r2plus1d_L8_split3.yaml, seed: 0}
+  - {config: configs/h7/v4/efficientnet_v2_l_none_split0.yaml, seed: 0}
+  - {config: configs/h7/v4/resnet18_none_imagesplit.yaml, seed: 0}

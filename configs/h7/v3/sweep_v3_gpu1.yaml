@@ -1,0 +1,6 @@
+# half of sweep_v3 for GPU1 (generated)
+experiments:
+  - {config: configs/h7/v3/resnet18_transformer_L16_evalfix_split0.yaml, seed: 1}
+  - {config: configs/h7/v3/resnet18_transformer_L32_evalfix_split0.yaml, seed: 0}
+  - {config: configs/h7/v3/resnet50_transformer_L16_evalfix_split0.yaml, seed: 0}
+  - {config: configs/h7/v3/resnet50_lstm_L8_multifocal3_split0.yaml, seed: 0}

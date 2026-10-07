@@ -1,0 +1,60 @@
+# v26 controlled cached-feature baseline. Inherits v25 only for the frozen
+# patient-grouped data identity and reporting contract; all trainable model,
+# loss and optimizer components below are replaced together for this new family.
+inherits: configs/h7/v25_grouped_recipe_baseline.yaml
+builder: cached_video_validation_training
+cfg:
+  experiment:
+    id: v26_base_do_not_run
+    out_root: runs/h7/v26
+    tags: [v26, cached-features, patient-grouped, trainval-only]
+  data:
+    dataset: nantes_cached_sequences_trainval
+    feature_cache: runs/h7/v26/features_seed0
+    input_mode: visual
+    sequence_mode: full
+    clip_len: 16
+    clips_per_video: auto
+    clock_periods_h: [6.0, 12.0, 24.0, 48.0, 96.0]
+  model:
+    type: full_video_mstcn
+    backbone:
+      name: cached_features
+    head:
+      name: mstcn
+      hidden: 64
+      layers: 10
+      stages: 4
+      num_classes: 16
+      dropout: 0.5
+    num_classes: 16
+    dropout: 0.5
+  loss:
+    name: multistage_ce_tmse
+    lam: 0.15
+    truncation: 4.0
+  optimizer:
+    name: adamw
+    lr: 0.0005
+    weight_decay: 0.0001
+  scheduler:
+    name: warmup_cosine
+    warmup_epochs: 2
+  training:
+    epochs: 30
+    batch_size: 1
+    eval_len: 1024
+    eval_stride: 1024
+    eval_batch_size: 1024
+    num_workers: 0
+    amp: true
+    monitor: p_t
+    grad_accum: 1
+    swa_last: 0
+  logging:
+    frame_probs: true
+    embeddings: false
+    grad_norms: false
+    confusion: true
+    per_phase_loss: true
+    worst_k: 10

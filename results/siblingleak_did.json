@@ -1,0 +1,39 @@
+{
+ "backbone": "resnet18",
+ "seeds_used": [
+  0,
+  1,
+  2
+ ],
+ "n_videos": 82,
+ "Delta_L": 0.011242393559466731,
+ "n_L": 41,
+ "Delta_C": -0.0017901249608566685,
+ "n_C": 41,
+ "DiD": 0.0130325185203234,
+ "ci95": [
+  -0.020482622052744023,
+  0.04484364043815263
+ ],
+ "permutation_p": 0.4482,
+ "implied_inflation": {
+  "released_folds_pooled": 0.003933595529000051,
+  "released_folds_pooled_all704": 0.00409593439210164,
+  "random_video_level_split": 0.0036936551214488004,
+  "nantes_grouped_v1": 0.00013575540125336874,
+  "nantes_grouped_v2": 0.0,
+  "nantes_siblingleak_clean_v1": 0.0,
+  "nantes_siblingleak_leaky_v1": 0.0065162592601617,
+  "nantes_random_73_seed0": 0.003524099395801736
+ },
+ "exposure": {
+  "released_folds_pooled": 0.3018292682926829,
+  "released_folds_pooled_all704": 0.3142857142857143,
+  "random_video_level_split": 0.28341836734693876,
+  "nantes_grouped_v1": 0.010416666666666666,
+  "nantes_grouped_v2": 0.0,
+  "nantes_siblingleak_clean_v1": 0.0,
+  "nantes_siblingleak_leaky_v1": 0.5,
+  "nantes_random_73_seed0": 0.27040816326530615
+ }
+}

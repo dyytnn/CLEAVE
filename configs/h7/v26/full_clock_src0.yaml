@@ -1,0 +1,18 @@
+# v26 full_clock, matched source seed 0. Single scientific contrast: absolute acquisition time quantifies clock-only predictability.
+inherits: configs/h7/v26/_base.yaml
+cfg:
+  experiment:
+    id: v26_full_clock_src0
+    seed: 0
+    tags:
+    - v26
+    - full_clock
+    - matched-source-seed-0
+    - trainval-only
+    notes: absolute acquisition time quantifies clock-only predictability
+  data:
+    feature_cache: runs/h7/v26/features_seed0
+    input_mode: clock
+    sequence_mode: full
+  training:
+    batch_size: 1

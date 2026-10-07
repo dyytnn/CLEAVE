@@ -1,0 +1,7 @@
+# half of sweep_v8 for GPU1 (generated)
+experiments:
+  - {config: configs/h7/v8/resnet50_lstm_L8_cellcount_split0.yaml, seed: 0}
+  - {config: configs/h7/v8/resnet50_lstm_L8_photo_cellcount_split0.yaml, seed: 1}
+  - {config: configs/h7/v8/resnet18_transformer_L16_multifocal3_photo_evalfix_split0.yaml, seed: 0}
+  - {config: configs/h7/v8/resnet18_transformer_L16_multifocal3_photo_cellcount_evalfix_split0.yaml, seed: 0}
+  - {config: configs/h7/v8/resnet18_transformer_L16_multifocal3_photo_cellcount_evalfix_split0.yaml, seed: 2}

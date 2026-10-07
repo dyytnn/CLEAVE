@@ -1,0 +1,26 @@
+{
+ "mismatch": {
+  "n": 32,
+  "file_step_median": 0.2,
+  "image_interval_median": 0.2519713261648746,
+  "image_interval_iqr": [
+   0.25018216550474615,
+   0.25333333333333335
+  ],
+  "n_interval_0_23_0_27": 26
+ },
+ "other": {
+  "n": 620,
+  "file_step_median": 0.2524678225230826,
+  "image_interval_median": 0.25078534031413613,
+  "image_interval_iqr": [
+   0.21213356389986823,
+   0.2536423841059603
+  ],
+  "n_interval_0_23_0_27": 247
+ },
+ "n_mismatch_step_0_2_interval_0_23_0_27": 24,
+ "n_mismatch_step_0_2": 30,
+ "n_other_step_above_0_3": 134,
+ "n_other_covering": 314
+}

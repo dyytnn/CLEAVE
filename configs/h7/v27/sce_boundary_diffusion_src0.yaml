@@ -1,0 +1,14 @@
+# v27 full EmbryoDiff adaptation, matched source seed 0. Single change: boundary conditioning.
+inherits: configs/h7/v27/_sce_boundary_diffusion.yaml
+cfg:
+  experiment:
+    id: v27_sce_boundary_diffusion_src0
+    seed: 0
+    tags: [v27, sce-boundary-diffusion, matched-source-seed-0, trainval-only]
+    notes: boundary conditioning improves transition localization
+  data:
+    feature_cache: runs/h7/v26/features_seed0
+  model:
+    embryodiff:
+      eval_seed: 27000
+

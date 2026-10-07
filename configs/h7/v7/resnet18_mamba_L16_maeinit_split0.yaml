@@ -1,0 +1,12 @@
+# H7 v7 (T7 finetune): ResNet-18+Mamba initialised from clip-level MAE pretraining with a matching Mamba pretext head
+# (configs/mae/video_mae_resnet18_mamba.yaml) -- compare against resnet18_mamba_L16_split0 (ImageNet init, v5).
+inherits: configs/h7/_base.yaml
+cfg:
+  experiment:
+    id: resnet18_mamba_L16_maeinit_split0
+    tags: [pretrain, videomae, modern, ssm]
+  data: {clip_len: 16}
+  training: {batch_size: 4}
+  model:
+    backbone: {name: resnet18, pretrained: false, init_from: runs/mae/video_mae_resnet18_mamba/backbone.pt}
+    head: {name: mamba, hidden: 512, layers: 4}

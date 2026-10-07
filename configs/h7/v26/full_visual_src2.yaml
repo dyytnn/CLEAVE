@@ -1,0 +1,18 @@
+# v26 full_visual, matched source seed 2. Single scientific contrast: whole-video training improves over matched L16 windows.
+inherits: configs/h7/v26/_base.yaml
+cfg:
+  experiment:
+    id: v26_full_visual_src2
+    seed: 2
+    tags:
+    - v26
+    - full_visual
+    - matched-source-seed-2
+    - trainval-only
+    notes: whole-video training improves over matched L16 windows
+  data:
+    feature_cache: runs/h7/v26/features_seed2
+    input_mode: visual
+    sequence_mode: full
+  training:
+    batch_size: 1

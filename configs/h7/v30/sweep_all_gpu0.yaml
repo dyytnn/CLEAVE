@@ -1,0 +1,25 @@
+experiments:
+- config: configs/h7/v30/boundary_src0.yaml
+  seed: 0
+- config: configs/h7/v30/change_contrastive_src0.yaml
+  seed: 0
+- config: configs/h7/v30/peak_count_src0.yaml
+  seed: 0
+- config: configs/h7/v30/time_to_event_src0.yaml
+  seed: 0
+- config: configs/h7/v30/boundary_src1.yaml
+  seed: 1
+- config: configs/h7/v30/change_contrastive_src1.yaml
+  seed: 1
+- config: configs/h7/v30/peak_count_src1.yaml
+  seed: 1
+- config: configs/h7/v30/time_to_event_src1.yaml
+  seed: 1
+- config: configs/h7/v30/boundary_src2.yaml
+  seed: 2
+- config: configs/h7/v30/change_contrastive_src2.yaml
+  seed: 2
+- config: configs/h7/v30/peak_count_src2.yaml
+  seed: 2
+- config: configs/h7/v30/time_to_event_src2.yaml
+  seed: 2

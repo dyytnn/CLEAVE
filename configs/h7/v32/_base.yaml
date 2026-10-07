@@ -1,0 +1,16 @@
+# Generated inline for the v32 onset_linear replication -- training seeds 3/4/5 on caches 0/1/2.
+inherits: configs/h7/v29/_base.yaml
+cfg:
+  experiment:
+    id: v32_base_do_not_run
+    out_root: runs/h7/v32
+    tags:
+    - v32
+    - onset-linear-replication
+    - patient-grouped
+    - trainval-only
+    notes: pure replication of v29 onset_linear with fresh training seeds; nothing
+      else changes
+  model:
+    milestone:
+      variant: onset_linear

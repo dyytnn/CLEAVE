@@ -1,0 +1,4 @@
+# cross-focal transformer folds (GPU1). User go 2026-09-14.
+experiments:
+  - {config: configs/h7/v11/resnet18_transformer_L16_crossfocal7_evalfix_split2.yaml, seed: 0}
+  - {config: configs/h7/v11/resnet18_transformer_L16_crossfocal7_evalfix_split4.yaml, seed: 0}

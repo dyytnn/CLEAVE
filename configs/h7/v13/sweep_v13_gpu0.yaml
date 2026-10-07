@@ -1,0 +1,4 @@
+# T10 ablation (GPU0 half): sharpness-only, spatial+sharpness
+experiments:
+  - {config: configs/h7/v13/resnet18_transformer_L16_focalattn_sharp_evalfix_split0.yaml, seed: 0}
+  - {config: configs/h7/v13/resnet18_transformer_L16_focalattn_spatial_sharp_evalfix_split0.yaml, seed: 0}

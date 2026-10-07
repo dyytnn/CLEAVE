@@ -1,0 +1,17 @@
+# Generated inline for the v34 SCE replication -- training seeds 3/4/5 on caches 0/1/2.
+inherits: configs/h7/v34/_base.yaml
+cfg:
+  experiment:
+    id: v34_sce_rep_src2
+    tags:
+    - v34
+    - sce
+    - replication
+    - cache-seed-2
+    - trainval-only
+    notes: v27 sce, same cache, new training seed
+  data:
+    feature_cache: runs/h7/v26/features_seed2
+  model:
+    embryodiff:
+      eval_seed: 27002

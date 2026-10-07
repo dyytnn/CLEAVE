@@ -1,0 +1,13 @@
+# v5 queue (Mamba / Neural-ODE / diffusion-lite heads)
+experiments:
+  - {config: configs/h7/v5/resnet18_mamba_L16_split0.yaml, seed: 0}
+  - {config: configs/h7/v5/resnet18_mamba_L16_split0.yaml, seed: 1}
+  - {config: configs/h7/v5/resnet18_mamba_L16_split0.yaml, seed: 2}
+  - {config: configs/h7/v5/resnet18_node_L16_split0.yaml, seed: 0}
+  - {config: configs/h7/v5/resnet18_node_L16_split0.yaml, seed: 1}
+  - {config: configs/h7/v5/resnet18_node_L16_split0.yaml, seed: 2}
+  - {config: configs/h7/v5/resnet18_diffactlite_L16_split0.yaml, seed: 0}
+  - {config: configs/h7/v5/resnet18_diffactlite_L16_split0.yaml, seed: 1}
+  - {config: configs/h7/v5/resnet18_diffactlite_L16_split0.yaml, seed: 2}
+  - {config: configs/h7/v5/resnet50_mamba_L16_split0.yaml, seed: 0}
+  - {config: configs/h7/v5/resnet18_mamba_L16_multifocal3_split0.yaml, seed: 0}

@@ -1,0 +1,14 @@
+# v19 Stage 2 (GPU1): arm C (cross-focal+recipe) on folds 1-4 x 3 seeds, to pool with fold 0 (12.dd) for the 5-fold confirmatory comparison. User go 2026-09-19.
+experiments:
+  - {config: configs/h7/v19/resnet18_transformer_L16_crossfocal7_recipe_e20_evalfix_split1.yaml, seed: 0}
+  - {config: configs/h7/v19/resnet18_transformer_L16_crossfocal7_recipe_e20_evalfix_split1.yaml, seed: 1}
+  - {config: configs/h7/v19/resnet18_transformer_L16_crossfocal7_recipe_e20_evalfix_split1.yaml, seed: 2}
+  - {config: configs/h7/v19/resnet18_transformer_L16_crossfocal7_recipe_e20_evalfix_split2.yaml, seed: 0}
+  - {config: configs/h7/v19/resnet18_transformer_L16_crossfocal7_recipe_e20_evalfix_split2.yaml, seed: 1}
+  - {config: configs/h7/v19/resnet18_transformer_L16_crossfocal7_recipe_e20_evalfix_split2.yaml, seed: 2}
+  - {config: configs/h7/v19/resnet18_transformer_L16_crossfocal7_recipe_e20_evalfix_split3.yaml, seed: 0}
+  - {config: configs/h7/v19/resnet18_transformer_L16_crossfocal7_recipe_e20_evalfix_split3.yaml, seed: 1}
+  - {config: configs/h7/v19/resnet18_transformer_L16_crossfocal7_recipe_e20_evalfix_split3.yaml, seed: 2}
+  - {config: configs/h7/v19/resnet18_transformer_L16_crossfocal7_recipe_e20_evalfix_split4.yaml, seed: 0}
+  - {config: configs/h7/v19/resnet18_transformer_L16_crossfocal7_recipe_e20_evalfix_split4.yaml, seed: 1}
+  - {config: configs/h7/v19/resnet18_transformer_L16_crossfocal7_recipe_e20_evalfix_split4.yaml, seed: 2}

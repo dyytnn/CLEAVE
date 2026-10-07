@@ -1,0 +1,9 @@
+# v22 Stage 1 (GPU0): division-score auxiliary-signal screening on fold 0 x 3 seeds, arms A (count-channel) and
+# B (consistency-loss), each vs the crossfocal7+recipe control (v17, already at 0.7254 +- 0.0079 on this fold).
+experiments:
+  - {config: configs/h7/v22/resnet18_transformer_L16_crossfocal7_recipe_divchannel_e20_evalfix_split0.yaml, seed: 0}
+  - {config: configs/h7/v22/resnet18_transformer_L16_crossfocal7_recipe_divchannel_e20_evalfix_split0.yaml, seed: 1}
+  - {config: configs/h7/v22/resnet18_transformer_L16_crossfocal7_recipe_divchannel_e20_evalfix_split0.yaml, seed: 2}
+  - {config: configs/h7/v22/resnet18_transformer_L16_crossfocal7_recipe_divconsist_e20_evalfix_split0.yaml, seed: 0}
+  - {config: configs/h7/v22/resnet18_transformer_L16_crossfocal7_recipe_divconsist_e20_evalfix_split0.yaml, seed: 1}
+  - {config: configs/h7/v22/resnet18_transformer_L16_crossfocal7_recipe_divconsist_e20_evalfix_split0.yaml, seed: 2}

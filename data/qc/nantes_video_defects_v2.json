@@ -1,0 +1,615 @@
+{
+ "version": "nantes_video_defects_v2",
+ "derived_from": {
+  "v1": "data/qc/nantes_video_defects_v1.json",
+  "v1_sha256": "407c6666f8432eeffe92f478c6a0239d85c280baa5fd8fb6251b0fb90b62b3ff",
+  "timeline_audit": "results/frame_timing/alignment.csv",
+  "timeline_audit_sha256": "a97c8092c1c9645ba75608af7661600cc9351e15625cf792631290f3b5359290"
+ },
+ "tiers": {
+  "A": "label-image mismatch: removed from training",
+  "B": "image artefact, label correct: kept (labels cut at cutoff_h)",
+  "C": "atypical biology: kept everywhere"
+ },
+ "categories": {
+  "timeline_mismatch": {
+   "tier": "A",
+   "description": "The images run on a different clock from the annotation: pairing the k-th image with annotation frame k lets the label drift, by up to tens of hours by the end of the video."
+  },
+  "no_division": {
+   "tier": "A",
+   "description": "The embryo stays a single cell and never divides, while the annotation records divisions."
+  },
+  "blank_throughout": {
+   "tier": "A",
+   "description": "Every frame is a featureless bright well; no embryo is visible."
+  },
+  "annotation_ahead": {
+   "tier": "A",
+   "description": "The annotated onsets run ahead of what the images show, by one to two division stages."
+  },
+  "embryo_removed": {
+   "tier": "B",
+   "description": "The well empties partway through the recording (removal for transfer or freezing, or hatching out of view) and the release extends the last annotated phase to the end."
+  },
+  "dark_frames": {
+   "tier": "B",
+   "description": "Frames in the middle of the recording are under-exposed to near black."
+  },
+  "out_of_focus": {
+   "tier": "B",
+   "description": "Frames are an out-of-focus blur."
+  },
+  "abrupt_cleavage": {
+   "tier": "C",
+   "description": "Direct cleavage from one cell to three or more, or to a fragmented mass, within minutes."
+  },
+  "heavy_fragmentation": {
+   "tier": "C",
+   "description": "Heavy fragmentation makes the cell count, and so the stage, hard to read."
+  }
+ },
+ "inspected_by": "session inspection 2026-09-29; to be confirmed by an embryologist",
+ "unresolved": [],
+ "videos": {
+  "AAL839-6": {
+   "defects": [
+    "embryo_removed",
+    "timeline_mismatch"
+   ],
+   "note": "About four cells at the annotated tPNf frame (22 h); no embryo in the well at annotated tB (107 h).",
+   "source": "inspection (v1) + timeline audit",
+   "timeline": {
+    "slope": 1.235,
+    "offset": 4.0,
+    "phase_error_identity": 1.265,
+    "phase_error_fit": 0.383
+   },
+   "cutoff_h": 107.0,
+   "tier": "A"
+  },
+  "AL884-2": {
+   "defects": [
+    "timeline_mismatch"
+   ],
+   "note": "",
+   "source": "timeline audit",
+   "timeline": {
+    "slope": 1.225,
+    "offset": 7.0,
+    "phase_error_identity": 1.736,
+    "phase_error_fit": 0.595
+   },
+   "tier": "A"
+  },
+  "AM365-7": {
+   "defects": [
+    "out_of_focus"
+   ],
+   "note": "Embryo out of focus from 74 h to 90 h, annotated t9+ and tM.",
+   "source": "inspection (v1)",
+   "tier": "B"
+  },
+  "BC254-1": {
+   "defects": [
+    "timeline_mismatch"
+   ],
+   "note": "Two to three cells at the annotated tPNf frame (20 h).",
+   "source": "inspection (v1) + timeline audit",
+   "timeline": {
+    "slope": 1.265,
+    "offset": -3.0,
+    "phase_error_identity": 1.645,
+    "phase_error_fit": 0.481
+   },
+   "tier": "A"
+  },
+  "BC277-10": {
+   "defects": [
+    "dark_frames",
+    "timeline_mismatch"
+   ],
+   "note": "Under-exposed, near-black frames from 40 h to 49 h, annotated t2 and t4.",
+   "source": "inspection (v1) + timeline audit",
+   "timeline": {
+    "slope": 1.31,
+    "offset": -7.0,
+    "phase_error_identity": 2.158,
+    "phase_error_fit": 0.713
+   },
+   "tier": "A"
+  },
+  "BC396-1": {
+   "defects": [
+    "heavy_fragmentation",
+    "timeline_mismatch"
+   ],
+   "note": "From 36 h the embryo is a mass of fragments; stage not readable.",
+   "source": "inspection (v1) + timeline audit",
+   "timeline": {
+    "slope": 1.25,
+    "offset": 0.0,
+    "phase_error_identity": 1.569,
+    "phase_error_fit": 0.34
+   },
+   "tier": "A"
+  },
+  "BE327-2": {
+   "defects": [
+    "dark_frames",
+    "embryo_removed"
+   ],
+   "note": "A near-black frame around 56 h (annotated t4); the well is empty at 120 h, annotated tEB.",
+   "source": "inspection (v1)",
+   "cutoff_h": 120.0,
+   "tier": "B"
+  },
+  "BG201-1": {
+   "defects": [
+    "dark_frames"
+   ],
+   "note": "Under-exposed frames from 55 h to 70 h, annotated t4.",
+   "source": "inspection (v1)",
+   "tier": "B"
+  },
+  "BS777-8": {
+   "defects": [
+    "dark_frames"
+   ],
+   "note": "Near-black frames from 104 h to 113 h, annotated tM.",
+   "source": "inspection (v1)",
+   "tier": "B"
+  },
+  "CC938-4": {
+   "defects": [
+    "annotation_ahead"
+   ],
+   "note": "At annotated t2 (22 h) still one cell with pronuclei; at annotated t8 (48 h) about four to five cells. Runs one to two division stages ahead.",
+   "source": "inspection (v1)",
+   "tier": "A"
+  },
+  "CJ261-10": {
+   "defects": [
+    "timeline_mismatch"
+   ],
+   "note": "Two to three cells at raw RUN104, annotated tPNa; pronuclear stages annotated to RUN118 and t2 from RUN119. Verified on raw files.",
+   "source": "inspection (v1) + timeline audit",
+   "timeline": {
+    "slope": 1.395,
+    "offset": -18.0,
+    "phase_error_identity": 1.643,
+    "phase_error_fit": 0.395
+   },
+   "tier": "A"
+  },
+  "CJ261-6": {
+   "defects": [
+    "timeline_mismatch"
+   ],
+   "note": "Two cells at the annotated tPNf frame (22 h).",
+   "source": "inspection (v1) + timeline audit",
+   "timeline": {
+    "slope": 1.325,
+    "offset": -5.0,
+    "phase_error_identity": 1.254,
+    "phase_error_fit": 0.367
+   },
+   "tier": "A"
+  },
+  "DC307-1": {
+   "defects": [
+    "out_of_focus",
+    "timeline_mismatch"
+   ],
+   "note": "Two cells at the annotated tPNf frame (31 h); annotated tB (120 h) is a featureless blur.",
+   "source": "inspection (v1) + timeline audit",
+   "timeline": {
+    "slope": 1.23,
+    "offset": 1.0,
+    "phase_error_identity": 1.377,
+    "phase_error_fit": 0.581
+   },
+   "tier": "A"
+  },
+  "DHDPI042-6": {
+   "defects": [
+    "embryo_removed",
+    "timeline_mismatch"
+   ],
+   "note": "Two to three cells at the annotated tPNf frame (24 h); the well is empty at annotated tM (89 h) and tB (99 h).",
+   "source": "inspection (v1) + timeline audit",
+   "timeline": {
+    "slope": 1.265,
+    "offset": -3.0,
+    "phase_error_identity": 1.593,
+    "phase_error_fit": 0.275
+   },
+   "cutoff_h": 89.0,
+   "tier": "A"
+  },
+  "DRL1048-1": {
+   "defects": [
+    "no_division"
+   ],
+   "note": "A single cell from 24 h to 110 h; annotated through to blastocyst.",
+   "source": "inspection (v1)",
+   "tier": "A"
+  },
+  "DSE41-2": {
+   "defects": [
+    "abrupt_cleavage",
+    "out_of_focus"
+   ],
+   "note": "One cell at 31.6 h (RUN52), a fragmented many-celled mass by 32.4 h (RUN55); the frames are continuous, so this is the embryo, not a recording gap. Annotated tPNf then t6 directly. Annotated tEB (124 h) is out of focus.",
+   "source": "inspection (v1)",
+   "tier": "B"
+  },
+  "DSM138-5": {
+   "defects": [
+    "dark_frames"
+   ],
+   "note": "Under-exposed frames from 58 h to 67 h, annotated t4.",
+   "source": "inspection (v1)",
+   "tier": "B"
+  },
+  "DV116-3": {
+   "defects": [
+    "embryo_removed"
+   ],
+   "note": "Embryo visible to t5 (48 h); from 72 h to 141 h the well is a featureless blur, annotated t8 throughout.",
+   "source": "inspection (v1)",
+   "cutoff_h": 72.0,
+   "tier": "B"
+  },
+  "EH315-3": {
+   "defects": [
+    "heavy_fragmentation"
+   ],
+   "note": "Many cells and fragments already at the annotated tPNf frame (29 h).",
+   "source": "inspection (v1)",
+   "tier": "C"
+  },
+  "EJ393-3": {
+   "defects": [
+    "blank_throughout"
+   ],
+   "note": "Annotated tPNf to t8 over 190 labelled frames on blank frames.",
+   "source": "inspection (v1)",
+   "tier": "A"
+  },
+  "FM864-7": {
+   "defects": [
+    "dark_frames",
+    "timeline_mismatch"
+   ],
+   "note": "Under-exposed frames from 60 h to 67 h, annotated t4.",
+   "source": "inspection (v1) + timeline audit",
+   "timeline": {
+    "slope": 1.24,
+    "offset": -9.0,
+    "phase_error_identity": 1.057,
+    "phase_error_fit": 0.549
+   },
+   "tier": "A"
+  },
+  "FV709-11": {
+   "defects": [
+    "embryo_removed"
+   ],
+   "note": "Embryo visible at t5 (48 h); featureless well from 96 h to 100 h, annotated tSB.",
+   "source": "inspection (v1)",
+   "cutoff_h": 96.0,
+   "tier": "B"
+  },
+  "GA122-8": {
+   "defects": [
+    "timeline_mismatch"
+   ],
+   "note": "",
+   "source": "timeline audit",
+   "timeline": {
+    "slope": 1.25,
+    "offset": -27.0,
+    "phase_error_identity": 0.977,
+    "phase_error_fit": 0.515
+   },
+   "tier": "A"
+  },
+  "GA664-8": {
+   "defects": [
+    "timeline_mismatch"
+   ],
+   "note": "Two cells at the annotated tPNf frame (23 h).",
+   "source": "inspection (v1) + timeline audit",
+   "timeline": {
+    "slope": 1.185,
+    "offset": 10.0,
+    "phase_error_identity": 1.202,
+    "phase_error_fit": 0.508
+   },
+   "tier": "A"
+  },
+  "GC340-1": {
+   "defects": [
+    "embryo_removed",
+    "timeline_mismatch"
+   ],
+   "note": "Embryo visible at t2 (30 h); empty well from tSB (97 h) to tEB (112 h), before any hatching.",
+   "source": "inspection (v1) + timeline audit",
+   "timeline": {
+    "slope": 1.255,
+    "offset": -4.0,
+    "phase_error_identity": 1.317,
+    "phase_error_fit": 0.248
+   },
+   "cutoff_h": 97.0,
+   "tier": "A"
+  },
+  "GM456-3": {
+   "defects": [
+    "embryo_removed",
+    "no_division"
+   ],
+   "note": "Still one cell at annotated t4 (39 h); from 53 h the frames are a featureless blur with no embryo visible, annotated t8 and tM.",
+   "source": "inspection (v1)",
+   "cutoff_h": 53.0,
+   "tier": "A"
+  },
+  "GS490-7": {
+   "defects": [
+    "timeline_mismatch"
+   ],
+   "note": "",
+   "source": "timeline audit",
+   "timeline": {
+    "slope": 1.15,
+    "offset": 12.0,
+    "phase_error_identity": 1.133,
+    "phase_error_fit": 0.332
+   },
+   "tier": "A"
+  },
+  "LM184-4": {
+   "defects": [
+    "embryo_removed"
+   ],
+   "note": "Empty well from 122 h to 140 h, annotated tEB; possibly hatched out of view.",
+   "source": "inspection (v1)",
+   "cutoff_h": 122.0,
+   "tier": "B"
+  },
+  "LP284-3": {
+   "defects": [
+    "timeline_mismatch"
+   ],
+   "note": "",
+   "source": "timeline audit",
+   "timeline": {
+    "slope": 1.085,
+    "offset": -8.0,
+    "phase_error_identity": 0.691,
+    "phase_error_fit": 0.382
+   },
+   "tier": "A"
+  },
+  "LV683-2-8": {
+   "defects": [
+    "no_division"
+   ],
+   "note": "A single cell from 31 h to 118 h; annotated through to blastocyst.",
+   "source": "inspection (v1)",
+   "tier": "A"
+  },
+  "MAS203-4": {
+   "defects": [
+    "dark_frames"
+   ],
+   "note": "An exposure-artefact frame around 59 h, annotated t3, in which the embryo is barely visible.",
+   "source": "inspection (v1)",
+   "tier": "B"
+  },
+  "MM445-2-2": {
+   "defects": [
+    "timeline_mismatch"
+   ],
+   "note": "",
+   "source": "timeline audit",
+   "timeline": {
+    "slope": 1.28,
+    "offset": -4.0,
+    "phase_error_identity": 1.285,
+    "phase_error_fit": 0.281
+   },
+   "tier": "A"
+  },
+  "MM445-2-9": {
+   "defects": [
+    "timeline_mismatch"
+   ],
+   "note": "",
+   "source": "timeline audit",
+   "timeline": {
+    "slope": 1.295,
+    "offset": -6.0,
+    "phase_error_identity": 2.176,
+    "phase_error_fit": 1.202
+   },
+   "tier": "A"
+  },
+  "OC110-5": {
+   "defects": [
+    "embryo_removed"
+   ],
+   "note": "Four cells visible at 53 h; from 75 h to 142 h the well is a featureless blur, and all of it is annotated t8, about 70 hours of 8-cell labels on frames with no embryo.",
+   "source": "inspection (v1)",
+   "cutoff_h": 75.0,
+   "tier": "B"
+  },
+  "PMDPI029-1-8": {
+   "defects": [
+    "embryo_removed"
+   ],
+   "note": "Embryo visible at t2 (38 h); featureless well from 124 h to 138 h, annotated tB.",
+   "source": "inspection (v1)",
+   "cutoff_h": 124.0,
+   "tier": "B"
+  },
+  "PMDPI029-1-9": {
+   "defects": [
+    "out_of_focus"
+   ],
+   "note": "Frames from 133 h to 142 h, annotated tHB, are blurred.",
+   "source": "inspection (v1)",
+   "tier": "B"
+  },
+  "PO13-3": {
+   "defects": [
+    "embryo_removed"
+   ],
+   "note": "Embryo visible at t2 (31 h); featureless well from 99 h to 105 h, annotated tSB.",
+   "source": "inspection (v1)",
+   "cutoff_h": 99.0,
+   "tier": "B"
+  },
+  "QC267-8": {
+   "defects": [
+    "embryo_removed"
+   ],
+   "note": "Embryo visible at t2 (27 h); a featureless disc from 94 h to 100 h, annotated tM.",
+   "source": "inspection (v1)",
+   "cutoff_h": 94.0,
+   "tier": "B"
+  },
+  "RA803-4": {
+   "defects": [
+    "timeline_mismatch"
+   ],
+   "note": "Three to four cells at the annotated tPNf frame (26 h).",
+   "source": "inspection (v1) + timeline audit",
+   "timeline": {
+    "slope": 1.22,
+    "offset": 6.0,
+    "phase_error_identity": 1.167,
+    "phase_error_fit": 0.385
+   },
+   "tier": "A"
+  },
+  "RC545-2-5": {
+   "defects": [
+    "timeline_mismatch"
+   ],
+   "note": "",
+   "source": "timeline audit",
+   "timeline": {
+    "slope": 1.21,
+    "offset": 9.0,
+    "phase_error_identity": 1.464,
+    "phase_error_fit": 0.317
+   },
+   "tier": "A"
+  },
+  "RC545-2-8": {
+   "defects": [
+    "timeline_mismatch"
+   ],
+   "note": "",
+   "source": "timeline audit",
+   "timeline": {
+    "slope": 1.27,
+    "offset": 3.0,
+    "phase_error_identity": 2.375,
+    "phase_error_fit": 1.147
+   },
+   "tier": "A"
+  },
+  "RC545-2-9": {
+   "defects": [
+    "timeline_mismatch"
+   ],
+   "note": "Two to three cells at the annotated tPNf frame (22 h).",
+   "source": "inspection (v1) + timeline audit",
+   "timeline": {
+    "slope": 1.265,
+    "offset": 1.0,
+    "phase_error_identity": 1.511,
+    "phase_error_fit": 0.19
+   },
+   "tier": "A"
+  },
+  "RM126-4": {
+   "defects": [
+    "embryo_removed"
+   ],
+   "note": "Expanded blastocyst at 114 h; the well is empty at 141 h, annotated tEB; possibly hatched out of view.",
+   "source": "inspection (v1)",
+   "cutoff_h": 122.0,
+   "tier": "B"
+  },
+  "RM126-5": {
+   "defects": [
+    "heavy_fragmentation",
+    "timeline_mismatch"
+   ],
+   "note": "Three to four cells with fragments at the annotated t2 frame (36 h).",
+   "source": "inspection (v1) + timeline audit",
+   "timeline": {
+    "slope": 1.58,
+    "offset": -30.0,
+    "phase_error_identity": 2.172,
+    "phase_error_fit": 1.237
+   },
+   "tier": "A"
+  },
+  "RM126-6": {
+   "defects": [
+    "embryo_removed",
+    "timeline_mismatch"
+   ],
+   "note": "The well is empty at annotated tB (99 h).",
+   "source": "inspection (v1) + timeline audit",
+   "timeline": {
+    "slope": 1.26,
+    "offset": 0.0,
+    "phase_error_identity": 1.514,
+    "phase_error_fit": 0.112
+   },
+   "cutoff_h": 99.0,
+   "tier": "A"
+  },
+  "RM126-8": {
+   "defects": [
+    "embryo_removed"
+   ],
+   "note": "Empty well from 122 h to 141 h, annotated tEB; possibly hatched out of view.",
+   "source": "inspection (v1)",
+   "cutoff_h": 122.0,
+   "tier": "B"
+  },
+  "RM126-9": {
+   "defects": [
+    "embryo_removed"
+   ],
+   "note": "Empty well from 122 h to 141 h, annotated tEB; possibly hatched out of view.",
+   "source": "inspection (v1)",
+   "cutoff_h": 122.0,
+   "tier": "B"
+  },
+  "ST586-7": {
+   "defects": [
+    "embryo_removed"
+   ],
+   "note": "Normal to tSB (115 h); at annotated tB (141 h) the well is featureless.",
+   "source": "inspection (v1)",
+   "cutoff_h": 118.5,
+   "tier": "B"
+  },
+  "TM312-2": {
+   "defects": [
+    "dark_frames"
+   ],
+   "note": "Dark, low-contrast frames from 99 h to 113 h, annotated t9+ and tM.",
+   "source": "inspection (v1)",
+   "tier": "B"
+  }
+ }
+}

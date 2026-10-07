@@ -1,0 +1,18 @@
+# v26 clip16_visual, matched source seed 2. Single scientific contrast: controlled L16 frozen-feature parent.
+inherits: configs/h7/v26/_base.yaml
+cfg:
+  experiment:
+    id: v26_clip16_visual_src2
+    seed: 2
+    tags:
+    - v26
+    - clip16_visual
+    - matched-source-seed-2
+    - trainval-only
+    notes: controlled L16 frozen-feature parent
+  data:
+    feature_cache: runs/h7/v26/features_seed2
+    input_mode: visual
+    sequence_mode: clip
+  training:
+    batch_size: 28

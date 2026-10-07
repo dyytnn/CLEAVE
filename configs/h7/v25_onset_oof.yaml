@@ -1,0 +1,43 @@
+# v25 prerequisite: five patient-level OOF exact-onset teachers.
+# Calibration is fit on train OOF predictions; validation sees a five-fold ensemble.
+builder: onset_oof_cache
+cfg:
+  experiment:
+    id: v25_onset_oof
+    seed: 0
+    out_root: runs/h7/v25
+  data:
+    manifest: data/derived/nantes_manifest_F0.csv
+    split: data/splits/nantes_grouped_v1.json
+    plane: embryo_dataset
+    resize: 250
+    crop: 224
+    cache_dir: data/cache/nantes_250
+  encoder:
+    name: resnet18
+    weights: ~/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth
+    feature_cache: data/cache/v24_onset_features
+    batch_size: 64
+    num_workers: 4
+  model:
+    name: dense_tcn
+    hidden: 128
+    layers: 4
+    kernel: 3
+    dropout: 0.2
+  target:
+    radius: 0
+  training:
+    epochs: 20
+    lr: 0.001
+    weight_decay: 0.0001
+    pos_weight_cap: 20.0
+    grad_clip: 1.0
+    device: cuda
+  evaluation:
+    tolerance: 2
+    peak_separation: 2
+  oof:
+    folds: 5
+    seed: 2500
+    calibration_max_iter: 50

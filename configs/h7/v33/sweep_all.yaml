@@ -1,0 +1,13 @@
+experiments:
+- config: configs/h7/v33/frozen_control_src0.yaml
+  seed: 0
+- config: configs/h7/v33/e2e_src0.yaml
+  seed: 0
+- config: configs/h7/v33/frozen_control_src1.yaml
+  seed: 1
+- config: configs/h7/v33/e2e_src1.yaml
+  seed: 1
+- config: configs/h7/v33/frozen_control_src2.yaml
+  seed: 2
+- config: configs/h7/v33/e2e_src2.yaml
+  seed: 2

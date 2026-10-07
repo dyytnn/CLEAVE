@@ -1,0 +1,20 @@
+{
+ "sample": 6,
+ "sat_threshold": 0.5,
+ "contrast_threshold": 6.0,
+ "n_videos": 652,
+ "n_flagged": 1,
+ "flagged": [
+  {
+   "video": "EJ393-3",
+   "sat": 0.0,
+   "contrast": 0.6177465915679932,
+   "frac_featureless": 1.0,
+   "n": 6
+  }
+ ],
+ "flagged_already_excluded": [],
+ "flagged_still_in_use": [
+  "EJ393-3"
+ ]
+}

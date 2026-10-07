@@ -1,0 +1,9 @@
+# v17 (GPU1): recipe seed 2, plane-aug+recipe x3, cross-focal+recipe x3.
+experiments:
+  - {config: configs/h7/v17/resnet18_transformer_L16_recipe_e20_evalfix_split0.yaml, seed: 2}
+  - {config: configs/h7/v17/resnet18_transformer_L16_planeaug_recipe_e20_evalfix_split0.yaml, seed: 0}
+  - {config: configs/h7/v17/resnet18_transformer_L16_planeaug_recipe_e20_evalfix_split0.yaml, seed: 1}
+  - {config: configs/h7/v17/resnet18_transformer_L16_planeaug_recipe_e20_evalfix_split0.yaml, seed: 2}
+  - {config: configs/h7/v17/resnet18_transformer_L16_crossfocal7_recipe_e20_evalfix_split0.yaml, seed: 0}
+  - {config: configs/h7/v17/resnet18_transformer_L16_crossfocal7_recipe_e20_evalfix_split0.yaml, seed: 1}
+  - {config: configs/h7/v17/resnet18_transformer_L16_crossfocal7_recipe_e20_evalfix_split0.yaml, seed: 2}

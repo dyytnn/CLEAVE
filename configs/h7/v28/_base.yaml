@@ -1,0 +1,77 @@
+# v28 official-code EMFiT common-protocol comparator.
+# Literature reproduction package: raw seven-plane I3D + frame-token ViT + frame regression.
+inherits: configs/h7/v25_grouped_recipe_baseline.yaml
+builder: kinetic_validation_training
+cfg:
+  experiment:
+    id: v28_base_do_not_run
+    out_root: runs/h7/v28
+    tags: [v28, emfit, official-code, patient-grouped, trainval-only]
+    notes: Architecture-faithful EMFiT comparator on the frozen common protocol.
+  data:
+    dataset: nantes_emfit_frames_trainval
+    planes:
+      - embryo_dataset_F-45
+      - embryo_dataset_F-30
+      - embryo_dataset_F-15
+      - embryo_dataset
+      - embryo_dataset_F15
+      - embryo_dataset_F30
+      - embryo_dataset_F45
+    resize: 224
+    crop: 224
+    cache_dir: data/cache/nantes_250
+    emfit_cache_strict: true
+    rotation: null
+    max_frames_per_video: null
+    frame_index_divisor: 415.0
+    emfit_augmentation:
+      crop_scale_min: 0.8
+      rotation_deg: 45.0
+      brightness: 0.2
+      contrast: 0.2
+      noise_std: 0.04
+  model:
+    type: emfit
+    backbone:
+      name: emfit_i3d
+      checkpoint: runs/h7/v28/pretrained/i3d_baseline_32x2_IN_pretrain_400k.pth
+      expected_sha256: d777f807ff19dd6bf8333d742e990080a76ebb3417033626374cc48cdf702b93
+    head:
+      name: none
+    emfit:
+      vit_pretrained: true
+    num_classes: 16
+    dropout: 0.0
+  loss:
+    name: emfit_multitask
+    frame_weight: 5.0
+  optimizer:
+    name: adam
+    lr: 0.00016
+    weight_decay: 0.00001
+  scheduler:
+    name: cosine_warm_restarts
+    t0: 30
+    t_mult: 1
+    eta_min: 0.00005
+  training:
+    epochs: 30
+    batch_size: 64
+    eval_len: 1
+    eval_stride: 1
+    eval_batch_size: 64
+    num_workers: 16
+    amp: true
+    monitor: p
+    grad_accum: 1
+    swa_last: 0
+  decoder:
+    name: viterbi
+  logging:
+    frame_probs: true
+    embeddings: false
+    grad_norms: false
+    confusion: true
+    per_phase_loss: true
+    worst_k: 10

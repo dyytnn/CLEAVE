@@ -1,0 +1,18 @@
+# v26 full_visual_clock, matched source seed 2. Single scientific contrast: clock adds information beyond frozen visual full-video features.
+inherits: configs/h7/v26/_base.yaml
+cfg:
+  experiment:
+    id: v26_full_visual_clock_src2
+    seed: 2
+    tags:
+    - v26
+    - full_visual_clock
+    - matched-source-seed-2
+    - trainval-only
+    notes: clock adds information beyond frozen visual full-video features
+  data:
+    feature_cache: runs/h7/v26/features_seed2
+    input_mode: visual_clock
+    sequence_mode: full
+  training:
+    batch_size: 1

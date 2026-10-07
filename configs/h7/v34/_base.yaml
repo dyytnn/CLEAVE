@@ -1,0 +1,15 @@
+# Generated inline for the v34 SCE replication -- training seeds 3/4/5 on caches 0/1/2.
+inherits: configs/h7/v27/_base.yaml
+cfg:
+  experiment:
+    id: v34_base_do_not_run
+    out_root: runs/h7/v34
+    tags:
+    - v34
+    - sce-replication
+    - patient-grouped
+    - trainval-only
+    notes: pure training-seed replication of v27 sce; symmetric counterpart to v32
+  model:
+    embryodiff:
+      variant: sce

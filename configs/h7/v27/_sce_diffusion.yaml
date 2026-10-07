@@ -1,0 +1,11 @@
+# v27 diffusion ablation. Single change from _base: add label-space conditional diffusion; boundary path remains off.
+inherits: configs/h7/v27/_base.yaml
+cfg:
+  experiment:
+    id: v27_sce_diffusion_base_do_not_run
+    tags: [v27, embryodiff-adaptation, sce-diffusion, patient-grouped, trainval-only]
+    notes: semantic condition encoder plus label-space conditional diffusion
+  model:
+    embryodiff:
+      variant: sce_diffusion
+

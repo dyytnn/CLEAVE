@@ -1,0 +1,5 @@
+# v20 Stage 1 (GPU0): L32 absolute-position screening on fold 0 x 3 seeds vs L16 control. User go 2026-09-20.
+experiments:
+  - {config: configs/h7/v20/resnet18_transformer_L32_e20_evalfix_split0.yaml, seed: 0}
+  - {config: configs/h7/v20/resnet18_transformer_L32_e20_evalfix_split0.yaml, seed: 1}
+  - {config: configs/h7/v20/resnet18_transformer_L32_e20_evalfix_split0.yaml, seed: 2}

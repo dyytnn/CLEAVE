@@ -1,0 +1,7 @@
+# v9 queue (T9: 448-px input; 7-plane cross-focal attention). User go 2026-09-13.
+experiments:
+  - {config: configs/h7/v9/resnet18_lstm_L8_hires448_split0.yaml, seed: 0}
+  - {config: configs/h7/v9/resnet50_lstm_L8_hires448_split0.yaml, seed: 0}
+  - {config: configs/h7/v9/resnet18_transformer_L16_crossfocal7_evalfix_split0.yaml, seed: 0}
+  - {config: configs/h7/v9/resnet18_lstm_L8_crossfocal7_split0.yaml, seed: 0}
+  - {config: configs/h7/v9/resnet18_lstm_L8_hires448_crossfocal7_split0.yaml, seed: 0}

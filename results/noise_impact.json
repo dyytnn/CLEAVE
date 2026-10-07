@@ -1,0 +1,238 @@
+{
+ "defect_log": "nantes_video_defects_v4",
+ "n_defective": 68,
+ "n_tier_A": 42,
+ "n_image_scan_only": 22,
+ "training_contamination": {
+  "nantes_grouped_v1": {
+   "videos": 456,
+   "defective": 48,
+   "tier_A": 25,
+   "tier_A_frame_share": 0.06694338862471308,
+   "frame_share_upper_bound": 0.12154561406298871
+  },
+  "nantes_grouped_v2": {
+   "videos": 465,
+   "defective": 47,
+   "tier_A": 28,
+   "tier_A_frame_share": 0.07262803715131874,
+   "frame_share_upper_bound": 0.1208141452043891
+  },
+  "nantes_siblingleak_clean_v1": {
+   "videos": 348,
+   "defective": 18,
+   "tier_A": 8,
+   "tier_A_frame_share": 0.0271397034694669,
+   "frame_share_upper_bound": 0.05357835386772471
+  },
+  "nantes_siblingleak_leaky_v1": {
+   "videos": 348,
+   "defective": 32,
+   "tier_A": 17,
+   "tier_A_frame_share": 0.06164388455794611,
+   "frame_share_upper_bound": 0.10667457430921264
+  },
+  "official_split0": {
+   "videos": 523,
+   "defective": 55,
+   "tier_A": 32,
+   "tier_A_frame_share": 0.07516359405681071,
+   "frame_share_upper_bound": 0.12289213139028507
+  },
+  "official_split1": {
+   "videos": 526,
+   "defective": 56,
+   "tier_A": 34,
+   "tier_A_frame_share": 0.077700063417369,
+   "frame_share_upper_bound": 0.12346626471696552
+  },
+  "official_split2": {
+   "videos": 522,
+   "defective": 51,
+   "tier_A": 31,
+   "tier_A_frame_share": 0.07358011750751661,
+   "frame_share_upper_bound": 0.11526862144742045
+  },
+  "official_split3": {
+   "videos": 521,
+   "defective": 57,
+   "tier_A": 37,
+   "tier_A_frame_share": 0.08656142090955844,
+   "frame_share_upper_bound": 0.12735103960032326
+  },
+  "official_split4": {
+   "videos": 519,
+   "defective": 54,
+   "tier_A": 34,
+   "tier_A_frame_share": 0.07832836973306861,
+   "frame_share_upper_bound": 0.12027079196999779
+  }
+ },
+ "headline_comparison": {
+  "grouped_v1": {
+   "n_defective_test": 8,
+   "none": {
+    "reference": 0.6802938766480433,
+    "crossfocal": 0.7335857525961693,
+    "gap": 0.05329187594812601
+   },
+   "tier_A": {
+    "reference": 0.7303309881961567,
+    "crossfocal": 0.7860362795756054,
+    "gap": 0.055705291379448685
+   },
+   "all_inspected": {
+    "reference": 0.7289500692909784,
+    "crossfocal": 0.7865510016078198,
+    "gap": 0.05760093231684138
+   },
+   "image_scan_only": {
+    "reference": 0.6857059607059607,
+    "crossfocal": 0.7413137394520374,
+    "gap": 0.0556077787460767
+   }
+  },
+  "grouped_v2": {
+   "n_defective_test": 10,
+   "none": {
+    "reference": 0.6518446908896347,
+    "crossfocal": 0.7265048829655572,
+    "gap": 0.07466019207592245
+   },
+   "tier_A": {
+    "reference": 0.7003254085571159,
+    "crossfocal": 0.7820749598188623,
+    "gap": 0.08174955126174643
+   },
+   "all_inspected": {
+    "reference": 0.704650939777522,
+    "crossfocal": 0.7864575532297051,
+    "gap": 0.0818066134521831
+   },
+   "image_scan_only": {
+    "reference": 0.659940909650212,
+    "crossfocal": 0.7363442005883867,
+    "gap": 0.07640329093817466
+   }
+  }
+ },
+ "released_fivefold": {
+  "n_defective_test_slots": 35,
+  "none": {
+   "reference": 0.69295150561357,
+   "crossfocal": 0.7474787201091687,
+   "gap": 0.05452721449559872
+  },
+  "tier_A": {
+   "reference": 0.7306366407286997,
+   "crossfocal": 0.7892749273934339,
+   "gap": 0.05863828666473414
+  },
+  "all_inspected": {
+   "reference": 0.7326315344694614,
+   "crossfocal": 0.7938977979165791,
+   "gap": 0.06126626344711772
+  },
+  "image_scan_only": {
+   "reference": 0.69189960167873,
+   "crossfocal": 0.7478110333289558,
+   "gap": 0.05591143165022583
+  }
+ },
+ "categories": {
+  "timeline_mismatch": 32,
+  "embryo_removed": 19,
+  "dark_frames": 8,
+  "heavy_fragmentation": 6,
+  "no_division": 5,
+  "out_of_focus": 4,
+  "abrupt_cleavage": 4,
+  "annotation_ahead": 3,
+  "developmental_arrest": 1,
+  "blank_throughout": 1,
+  "annotation_truncated": 1,
+  "annotation_behind": 1
+ },
+ "fold0_ranking": {
+  "n_configs": 55,
+  "original_best": 0.7338371827177798,
+  "original_median": 0.6771403554985644,
+  "tier_A": {
+   "best": 0.7794269663317283,
+   "median": 0.7201333939429178,
+   "mean_lift": 0.039424448650181465,
+   "spearman": 0.9994949494949497,
+   "top5_kept": 4
+  },
+  "all_inspected": {
+   "best": 0.7778872311659197,
+   "median": 0.7154423445407052,
+   "mean_lift": 0.0369933025151345,
+   "spearman": 0.9988455988455991,
+   "top5_kept": 5
+  },
+  "image_scan_only": {
+   "best": 0.7309894379125148,
+   "median": 0.6722087741318511,
+   "mean_lift": -0.003494597100588113,
+   "spearman": 0.9989898989898992,
+   "top5_kept": 5
+  }
+ },
+ "diagnosis": {
+  "reference": {
+   "share_of_errors_on_defective": 0.23065953654188948,
+   "share_of_errors_on_tier_A": 0.20926916221033867,
+   "n_test": 67,
+   "n_defective_test": 6,
+   "n_tier_A_test": 4,
+   "none": {
+    "frame_error": 0.29621937482399324,
+    "far_share": 0.4489601901366607,
+    "mid_cleavage_share": 0.3879976232917409
+   },
+   "tier_A": {
+    "frame_error": 0.25403733822013513,
+    "far_share": 0.40967838893898406,
+    "mid_cleavage_share": 0.4317703636910129
+   },
+   "all_inspected": {
+    "frame_error": 0.25582865723543824,
+    "far_share": 0.4079394501081248,
+    "mid_cleavage_share": 0.43636082792709296
+   },
+   "image_scan_only": {
+    "frame_error": 0.29922604556520477,
+    "far_share": 0.44845173041894354,
+    "mid_cleavage_share": 0.39064966605950213
+   }
+  },
+  "crossfocal": {
+   "share_of_errors_on_defective": 0.25505816894284267,
+   "share_of_errors_on_tier_A": 0.2152250885179565,
+   "n_test": 67,
+   "n_defective_test": 6,
+   "n_tier_A_test": 4,
+   "none": {
+    "frame_error": 0.27837228949591664,
+    "far_share": 0.45144157814871017,
+    "mid_cleavage_share": 0.3622913505311077
+   },
+   "tier_A": {
+    "frame_error": 0.23693353185965715,
+    "far_share": 0.41185949081534,
+    "mid_cleavage_share": 0.4041250402835965
+   },
+   "all_inspected": {
+    "frame_error": 0.2327906425353671,
+    "far_share": 0.40010185028008827,
+    "mid_cleavage_share": 0.4062128670853845
+   },
+   "image_scan_only": {
+    "frame_error": 0.27589840485447475,
+    "far_share": 0.4439615435269327,
+    "mid_cleavage_share": 0.36217568813380746
+   }
+  }
+ }
+}

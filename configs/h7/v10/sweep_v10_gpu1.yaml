@@ -1,0 +1,3 @@
+# cross-focal ResNet-50 CNN variant (GPU1)
+experiments:
+  - {config: configs/h7/v10/resnet50_transformer_L16_crossfocal7_evalfix_split0.yaml, seed: 0}

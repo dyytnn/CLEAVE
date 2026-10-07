@@ -1,0 +1,341 @@
+{
+ "threshold_structure": 22.41705109559349,
+ "per_video": 30,
+ "min_frac": 0.1,
+ "n_videos": 652,
+ "n_frames": 19558,
+ "n_flagged": 26,
+ "flagged": [
+  {
+   "video": "EJ393-3",
+   "frac_featureless": 1.0,
+   "n_sampled": 30,
+   "from_h": 24.9,
+   "to_h": 72.5,
+   "phases_on_featureless": [
+    "t2",
+    "t3",
+    "t4",
+    "t7",
+    "t8",
+    "tPNf"
+   ],
+   "pattern": "throughout"
+  },
+  {
+   "video": "OC110-5",
+   "frac_featureless": 0.67,
+   "n_sampled": 30,
+   "from_h": 45.6,
+   "to_h": 141.7,
+   "phases_on_featureless": [
+    "t2",
+    "t8"
+   ],
+   "pattern": "scattered"
+  },
+  {
+   "video": "DV116-3",
+   "frac_featureless": 0.63,
+   "n_sampled": 30,
+   "from_h": 69.5,
+   "to_h": 141.0,
+   "phases_on_featureless": [
+    "t8"
+   ],
+   "pattern": "scattered"
+  },
+  {
+   "video": "GM456-3",
+   "frac_featureless": 0.6,
+   "n_sampled": 30,
+   "from_h": 40.4,
+   "to_h": 90.8,
+   "phases_on_featureless": [
+    "t4",
+    "t7",
+    "t8",
+    "t9+",
+    "tM"
+   ],
+   "pattern": "scattered"
+  },
+  {
+   "video": "ST586-7",
+   "frac_featureless": 0.2,
+   "n_sampled": 30,
+   "from_h": 118.5,
+   "to_h": 141.3,
+   "phases_on_featureless": [
+    "tB"
+   ],
+   "pattern": "late"
+  },
+  {
+   "video": "AM365-7",
+   "frac_featureless": 0.17,
+   "n_sampled": 30,
+   "from_h": 73.9,
+   "to_h": 89.7,
+   "phases_on_featureless": [
+    "t9+",
+    "tM"
+   ],
+   "pattern": "scattered"
+  },
+  {
+   "video": "BE327-2",
+   "frac_featureless": 0.17,
+   "n_sampled": 30,
+   "from_h": 49.5,
+   "to_h": 64.3,
+   "phases_on_featureless": [
+    "t4"
+   ],
+   "pattern": "scattered"
+  },
+  {
+   "video": "GC340-1",
+   "frac_featureless": 0.17,
+   "n_sampled": 30,
+   "from_h": 96.6,
+   "to_h": 111.6,
+   "phases_on_featureless": [
+    "tEB",
+    "tSB"
+   ],
+   "pattern": "late"
+  },
+  {
+   "video": "LM184-4",
+   "frac_featureless": 0.17,
+   "n_sampled": 30,
+   "from_h": 122.0,
+   "to_h": 140.3,
+   "phases_on_featureless": [
+    "tEB"
+   ],
+   "pattern": "late"
+  },
+  {
+   "video": "MAS203-4",
+   "frac_featureless": 0.17,
+   "n_sampled": 30,
+   "from_h": 46.6,
+   "to_h": 65.1,
+   "phases_on_featureless": [
+    "t3"
+   ],
+   "pattern": "scattered"
+  },
+  {
+   "video": "RM126-4",
+   "frac_featureless": 0.17,
+   "n_sampled": 30,
+   "from_h": 122.5,
+   "to_h": 140.7,
+   "phases_on_featureless": [
+    "tEB"
+   ],
+   "pattern": "late"
+  },
+  {
+   "video": "RM126-8",
+   "frac_featureless": 0.17,
+   "n_sampled": 30,
+   "from_h": 122.5,
+   "to_h": 140.7,
+   "phases_on_featureless": [
+    "tEB"
+   ],
+   "pattern": "late"
+  },
+  {
+   "video": "RM126-9",
+   "frac_featureless": 0.17,
+   "n_sampled": 30,
+   "from_h": 122.5,
+   "to_h": 140.7,
+   "phases_on_featureless": [
+    "tEB"
+   ],
+   "pattern": "late"
+  },
+  {
+   "video": "BC277-10",
+   "frac_featureless": 0.13,
+   "n_sampled": 30,
+   "from_h": 40.4,
+   "to_h": 49.0,
+   "phases_on_featureless": [
+    "t2",
+    "t4"
+   ],
+   "pattern": "scattered"
+  },
+  {
+   "video": "BG201-1",
+   "frac_featureless": 0.13,
+   "n_sampled": 30,
+   "from_h": 55.3,
+   "to_h": 69.7,
+   "phases_on_featureless": [
+    "t4"
+   ],
+   "pattern": "scattered"
+  },
+  {
+   "video": "DC307-1",
+   "frac_featureless": 0.13,
+   "n_sampled": 30,
+   "from_h": 116.6,
+   "to_h": 129.8,
+   "phases_on_featureless": [
+    "tB",
+    "tEB",
+    "tSB"
+   ],
+   "pattern": "late"
+  },
+  {
+   "video": "DSE41-2",
+   "frac_featureless": 0.13,
+   "n_sampled": 30,
+   "from_h": 123.3,
+   "to_h": 135.0,
+   "phases_on_featureless": [
+    "tB",
+    "tEB"
+   ],
+   "pattern": "late"
+  },
+  {
+   "video": "FM864-7",
+   "frac_featureless": 0.13,
+   "n_sampled": 30,
+   "from_h": 60.4,
+   "to_h": 67.4,
+   "phases_on_featureless": [
+    "t4"
+   ],
+   "pattern": "late"
+  },
+  {
+   "video": "PMDPI029-1-8",
+   "frac_featureless": 0.13,
+   "n_sampled": 30,
+   "from_h": 123.7,
+   "to_h": 137.9,
+   "phases_on_featureless": [
+    "tB"
+   ],
+   "pattern": "late"
+  },
+  {
+   "video": "TM312-2",
+   "frac_featureless": 0.13,
+   "n_sampled": 30,
+   "from_h": 98.6,
+   "to_h": 112.8,
+   "phases_on_featureless": [
+    "t9+",
+    "tM"
+   ],
+   "pattern": "late"
+  },
+  {
+   "video": "BS777-8",
+   "frac_featureless": 0.1,
+   "n_sampled": 30,
+   "from_h": 104.5,
+   "to_h": 112.7,
+   "phases_on_featureless": [
+    "tM"
+   ],
+   "pattern": "late"
+  },
+  {
+   "video": "DSM138-5",
+   "frac_featureless": 0.1,
+   "n_sampled": 30,
+   "from_h": 57.5,
+   "to_h": 67.0,
+   "phases_on_featureless": [
+    "t4"
+   ],
+   "pattern": "scattered"
+  },
+  {
+   "video": "FV709-11",
+   "frac_featureless": 0.1,
+   "n_sampled": 30,
+   "from_h": 95.9,
+   "to_h": 99.9,
+   "phases_on_featureless": [
+    "tSB"
+   ],
+   "pattern": "late"
+  },
+  {
+   "video": "PMDPI029-1-9",
+   "frac_featureless": 0.1,
+   "n_sampled": 30,
+   "from_h": 133.2,
+   "to_h": 142.2,
+   "phases_on_featureless": [
+    "tHB"
+   ],
+   "pattern": "late"
+  },
+  {
+   "video": "PO13-3",
+   "frac_featureless": 0.1,
+   "n_sampled": 30,
+   "from_h": 98.8,
+   "to_h": 104.8,
+   "phases_on_featureless": [
+    "tSB"
+   ],
+   "pattern": "late"
+  },
+  {
+   "video": "QC267-8",
+   "frac_featureless": 0.1,
+   "n_sampled": 30,
+   "from_h": 93.8,
+   "to_h": 100.0,
+   "phases_on_featureless": [
+    "tM"
+   ],
+   "pattern": "late"
+  }
+ ],
+ "flagged_not_excluded": [
+  "AM365-7",
+  "BC277-10",
+  "BE327-2",
+  "BG201-1",
+  "BS777-8",
+  "DC307-1",
+  "DSE41-2",
+  "DSM138-5",
+  "DV116-3",
+  "EJ393-3",
+  "FM864-7",
+  "FV709-11",
+  "GC340-1",
+  "GM456-3",
+  "LM184-4",
+  "MAS203-4",
+  "OC110-5",
+  "PMDPI029-1-8",
+  "PMDPI029-1-9",
+  "PO13-3",
+  "QC267-8",
+  "RM126-4",
+  "RM126-8",
+  "RM126-9",
+  "ST586-7",
+  "TM312-2"
+ ]
+}

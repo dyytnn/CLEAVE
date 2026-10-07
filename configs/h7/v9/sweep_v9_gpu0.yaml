@@ -1,0 +1,4 @@
+# hires half (GPU0, after the reference seed-0 retrain)
+experiments:
+  - {config: configs/h7/v9/resnet18_lstm_L8_hires448_split0.yaml, seed: 0}
+  - {config: configs/h7/v9/resnet50_lstm_L8_hires448_split0.yaml, seed: 0}

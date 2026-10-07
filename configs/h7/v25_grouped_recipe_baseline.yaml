@@ -1,0 +1,22 @@
+# v25 matched phase baseline. Scientific change from v17C: patient-grouped split.
+# Infrastructure-only change: train/val-only builder; test is never constructed/evaluated.
+inherits: configs/h7/v17/resnet18_transformer_L16_crossfocal7_recipe_e20_evalfix_split0.yaml
+builder: kinetic_validation_training
+cfg:
+  experiment:
+    id: v25_grouped_recipe_baseline
+    out_root: runs/h7/v25
+    tags:
+    - v25-control
+    - grouped
+    - trainval-only
+  data:
+    dataset: nantes_clips_trainval
+    split: data/splits/nantes_grouped_v1.json
+  logging:
+    frame_probs: true
+    embeddings: false
+    grad_norms: false
+    confusion: true
+    per_phase_loss: true
+    worst_k: 10

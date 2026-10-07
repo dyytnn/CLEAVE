@@ -1,0 +1,25 @@
+experiments:
+- config: configs/h7/v26/clip16_visual_src0.yaml
+  seed: 0
+- config: configs/h7/v26/full_visual_src0.yaml
+  seed: 0
+- config: configs/h7/v26/full_clock_src0.yaml
+  seed: 0
+- config: configs/h7/v26/full_visual_clock_src0.yaml
+  seed: 0
+- config: configs/h7/v26/clip16_visual_src1.yaml
+  seed: 1
+- config: configs/h7/v26/full_visual_src1.yaml
+  seed: 1
+- config: configs/h7/v26/full_clock_src1.yaml
+  seed: 1
+- config: configs/h7/v26/full_visual_clock_src1.yaml
+  seed: 1
+- config: configs/h7/v26/clip16_visual_src2.yaml
+  seed: 2
+- config: configs/h7/v26/full_visual_src2.yaml
+  seed: 2
+- config: configs/h7/v26/full_clock_src2.yaml
+  seed: 2
+- config: configs/h7/v26/full_visual_clock_src2.yaml
+  seed: 2

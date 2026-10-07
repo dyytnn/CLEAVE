@@ -1,0 +1,5 @@
+# v19 Stage 1 (GPU0): rare_phase_boost screening on fold 0 x 3 seeds vs control.
+experiments:
+  - {config: configs/h7/v19/resnet18_transformer_L16_rareboost_e20_evalfix_split0.yaml, seed: 0}
+  - {config: configs/h7/v19/resnet18_transformer_L16_rareboost_e20_evalfix_split0.yaml, seed: 1}
+  - {config: configs/h7/v19/resnet18_transformer_L16_rareboost_e20_evalfix_split0.yaml, seed: 2}

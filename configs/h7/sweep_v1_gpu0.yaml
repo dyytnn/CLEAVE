@@ -1,0 +1,10 @@
+# half of sweep_v1 for GPU0 (generated)
+experiments:
+  - configs/h7/resnet18_lstm_L4_split0.yaml
+  - configs/h7/resnet18_none_split0.yaml
+  - configs/h7/resnet18_gru_L8_split0.yaml
+  - configs/h7/resnet18_transformer_L16_split0.yaml
+  - configs/h7/resnet18_lstm_L4_ceweighted_split0.yaml
+  - configs/h7/resnet50_lstm_L8_split0.yaml
+  - configs/h7/swin_t_lstm_L8_split0.yaml
+  - configs/h7/r2plus1d_L8_split0.yaml

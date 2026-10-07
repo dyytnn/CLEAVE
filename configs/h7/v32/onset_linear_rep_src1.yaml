@@ -1,0 +1,14 @@
+# Generated inline for the v32 onset_linear replication -- training seeds 3/4/5 on caches 0/1/2.
+inherits: configs/h7/v32/_base.yaml
+cfg:
+  experiment:
+    id: v32_onset_linear_rep_src1
+    tags:
+    - v32
+    - onset_linear
+    - replication
+    - cache-seed-1
+    - trainval-only
+    notes: v29 onset_linear, same cache, new training seed
+  data:
+    feature_cache: runs/h7/v26/features_seed1

@@ -1,0 +1,14 @@
+# v27 sce, matched source seed 2. Discriminative semantic-condition baseline.
+inherits: configs/h7/v27/_base.yaml
+cfg:
+  experiment:
+    id: v27_sce_src2
+    seed: 2
+    tags: [v27, sce, matched-source-seed-2, trainval-only]
+    notes: discriminative six-layer semantic condition encoder
+  data:
+    feature_cache: runs/h7/v26/features_seed2
+  model:
+    embryodiff:
+      eval_seed: 27002
+

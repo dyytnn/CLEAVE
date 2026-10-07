@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use CLEAVE, please cite the article below and the Nantes dataset."
+title: "CLEAVE: protocol defects, mismatched labels and a cell-counting ceiling in the public benchmark for embryo morphokinetic phase recognition"
+authors:
+  - family-names: Nguyen
+    given-names: Tan
+    affiliation: "Faculty of Information Technology, Saigon University"
+    orcid: "https://orcid.org/0009-0009-5863-9003"
+  - family-names: Vu
+    given-names: Ngoc Thanh Sang
+    affiliation: "Faculty of Information Technology, Saigon University"
+    orcid: "https://orcid.org/0000-0001-6973-0499"
+repository-code: "https://github.com/dyytnn/CLEAVE"
+license: MIT
+version: "1.0.0"
+date-released: "2026-10-07"
+references:
+  - type: article
+    title: "A time-lapse embryo dataset for morphokinetic parameter prediction"
+    authors:
+      - family-names: Gomez
+        given-names: Tristan
+      - family-names: Feyeux
+        given-names: Magalie
+      - family-names: Boulant
+        given-names: Justine
+      - family-names: Normand
+        given-names: Nicolas
+      - family-names: David
+        given-names: Laurent
+      - family-names: Paul-Gilloteaux
+        given-names: Perrine
+      - family-names: Fréour
+        given-names: Thomas
+      - family-names: Mouchère
+        given-names: Harold
+    journal: "Data in Brief"
+    volume: 42
+    start: 108258
+    year: 2022
+    doi: "10.1016/j.dib.2022.108258"

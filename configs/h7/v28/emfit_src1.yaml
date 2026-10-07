@@ -1,0 +1,7 @@
+# v28 EMFiT seed 1. Published architecture/recipe; only protocol/head adapt to frozen 16-class grouped data.
+inherits: configs/h7/v28/_base.yaml
+cfg:
+  experiment:
+    id: v28_emfit_src1
+    seed: 1
+    tags: [v28, emfit, seed-1, trainval-only]

@@ -1,0 +1,11 @@
+# v27 boundary ablation. Single change from _sce_diffusion: add the boundary encoder, loss and hybrid boundary path.
+inherits: configs/h7/v27/_sce_diffusion.yaml
+cfg:
+  experiment:
+    id: v27_sce_boundary_diffusion_base_do_not_run
+    tags: [v27, embryodiff-adaptation, sce-boundary-diffusion, patient-grouped, trainval-only]
+    notes: full semantic-boundary conditional diffusion adaptation
+  model:
+    embryodiff:
+      variant: sce_boundary_diffusion
+

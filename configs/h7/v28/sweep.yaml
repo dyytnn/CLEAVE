@@ -1,0 +1,7 @@
+experiments:
+  - config: configs/h7/v28/emfit_src0.yaml
+    seed: 0
+  - config: configs/h7/v28/emfit_src1.yaml
+    seed: 1
+  - config: configs/h7/v28/emfit_src2.yaml
+    seed: 2

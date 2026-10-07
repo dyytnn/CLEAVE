@@ -1,0 +1,72 @@
+{
+  "experiment": {
+    "id": "resnet18_transformer_L16_recipe_e20_evalfix_split0",
+    "seed": 0,
+    "out_root": "runs/h7",
+    "tags": [
+      "v17B",
+      "rotation",
+      "tls",
+      "swa",
+      "epochs20"
+    ]
+  },
+  "data": {
+    "dataset": "nantes_clips",
+    "manifest": "data/derived/nantes_manifest_F0.csv",
+    "split": "data/splits/nantes_official/split0.csv",
+    "plane": "embryo_dataset",
+    "planes": null,
+    "resize": 250,
+    "crop": 224,
+    "clip_len": 16,
+    "clips_per_video": "auto",
+    "official_offset": false,
+    "cache_dir": "data/cache/nantes_250",
+    "rotation": {
+      "p": 0.75,
+      "deg": "any"
+    }
+  },
+  "model": {
+    "type": "seq_kinetic",
+    "backbone": {
+      "name": "resnet18",
+      "pretrained": true
+    },
+    "head": {
+      "name": "transformer",
+      "hidden": 512,
+      "layers": 2
+    },
+    "num_classes": 16,
+    "dropout": 0.5
+  },
+  "loss": {
+    "name": "ce_tls",
+    "eps": 0.3
+  },
+  "optimizer": {
+    "name": "adamw",
+    "lr": 0.0001,
+    "weight_decay": 0.05
+  },
+  "scheduler": {
+    "name": "warmup_cosine",
+    "warmup_epochs": 2
+  },
+  "training": {
+    "epochs": 20,
+    "batch_size": 4,
+    "eval_len": 16,
+    "eval_batch_size": 150,
+    "num_workers": 8,
+    "amp": true,
+    "monitor": "p_t",
+    "eval_stride": 8,
+    "swa_last": 5
+  },
+  "decoder": {
+    "name": "viterbi"
+  }
+}

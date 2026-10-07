@@ -1,0 +1,303 @@
+{
+ "version": "nantes_video_defects_v1",
+ "method": "Each of the 19 videos flagged by scripts/scan_hard_videos.py was inspected on the reference plane at every annotated onset (results/anomaly_sheet_*.png). For CJ261-10 the frames were read directly from the raw archive at the frame numbers the dataset's own annotation file names, which rules out a pipeline alignment error: RUN numbers are contiguous 1..542. Labels below are what is visible, not guesses about cause. A second, model-free scan (scripts/scan_featureless_frames.py) over all 652 annotated videos flagged 26 videos; all 22 not already listed were inspected and every one was confirmed. That scan has high precision but misses some empty wells (three already listed here were not flagged by it), so this list is a lower bound.",
+ "inspected_by": "session inspection 2026-09-29; to be confirmed by an embryologist",
+ "categories": {
+  "blank_throughout": [
+   "Every frame is a featureless bright well; no embryo is visible.",
+   "Mọi frame đều là một đĩa trắng, không thấy phôi."
+  ],
+  "no_division": [
+   "The embryo stays a single cell and never divides, while the annotation records divisions.",
+   "Phôi không phân chia, vẫn là một tế bào, trong khi chú thích ghi các lần phân chia."
+  ],
+  "annotation_ahead": [
+   "The annotated onsets run ahead of what the images show.",
+   "Chú thích đi trước ảnh: mốc được ghi sớm hơn giai đoạn thấy được."
+  ],
+  "annotation_behind": [
+   "The embryo has already cleaved at the frame annotated as a pronuclear stage.",
+   "Phôi đã phân chia ngay tại frame chú thích ghi là giai đoạn tiền nhân."
+  ],
+  "embryo_absent_late": [
+   "The well is empty or a featureless blur late in the recording, while stages are still annotated there.",
+   "Cuối video giếng trống hoặc mờ hẳn, không còn phôi, nhưng chú thích vẫn ghi giai đoạn."
+  ],
+  "abrupt_cleavage": [
+   "The embryo goes from one cell to a fragmented many-celled mass within minutes (abrupt cleavage from 1 to 3 or more cells, an exclusion criterion in Meseguer et al. 2011).",
+   "Phôi từ một tế bào vỡ thành khối nhiều mảnh trong vài phút (phân chia đột ngột, tiêu chí loại phôi)."
+  ],
+  "heavy_fragmentation": [
+   "Heavy fragmentation makes the cell count, and therefore the stage, unreadable.",
+   "Phân mảnh nặng khiến không đếm được số tế bào, không xác định được giai đoạn."
+  ],
+  "out_of_focus_late": [
+   "The last frames are an out-of-focus blur.",
+   "Các frame cuối bị mất nét hoàn toàn."
+  ],
+  "dark_frames": [
+   "Frames in the middle of the recording are under-exposed to near black, so the embryo is barely visible.",
+   "Có các frame giữa video bị tối đen do lỗi phơi sáng, gần như không thấy phôi."
+  ],
+  "out_of_focus_mid": [
+   "Frames in the middle of the recording are out of focus, so the cells cannot be counted.",
+   "Có các frame giữa video bị mất nét, không đếm được tế bào."
+  ]
+ },
+ "videos": {
+  "EJ393-3": {
+   "defects": [
+    "blank_throughout"
+   ],
+   "note": "Annotated tPNf to t8 over 190 labelled frames on blank frames."
+  },
+  "CC938-4": {
+   "defects": [
+    "annotation_ahead"
+   ],
+   "note": "At annotated t2 (22 h) still one cell with pronuclei; at annotated t8 (48 h) about four to five cells. Runs one to two division stages ahead."
+  },
+  "LV683-2-8": {
+   "defects": [
+    "no_division"
+   ],
+   "note": "A single cell from 31 h to 118 h; annotated through to blastocyst."
+  },
+  "DRL1048-1": {
+   "defects": [
+    "no_division"
+   ],
+   "note": "A single cell from 24 h to 110 h; annotated through to blastocyst."
+  },
+  "CJ261-10": {
+   "defects": [
+    "annotation_behind"
+   ],
+   "note": "Two to three cells at raw RUN104, annotated tPNa; pronuclear stages annotated to RUN118 and t2 from RUN119. Verified on raw files."
+  },
+  "CJ261-6": {
+   "defects": [
+    "annotation_behind"
+   ],
+   "note": "Two cells at the annotated tPNf frame (22 h)."
+  },
+  "GA664-8": {
+   "defects": [
+    "annotation_behind"
+   ],
+   "note": "Two cells at the annotated tPNf frame (23 h)."
+  },
+  "RA803-4": {
+   "defects": [
+    "annotation_behind"
+   ],
+   "note": "Three to four cells at the annotated tPNf frame (26 h)."
+  },
+  "RC545-2-9": {
+   "defects": [
+    "annotation_behind"
+   ],
+   "note": "Two to three cells at the annotated tPNf frame (22 h)."
+  },
+  "BC254-1": {
+   "defects": [
+    "annotation_behind"
+   ],
+   "note": "Two to three cells at the annotated tPNf frame (20 h)."
+  },
+  "EH315-3": {
+   "defects": [
+    "annotation_behind",
+    "heavy_fragmentation"
+   ],
+   "note": "Many cells and fragments already at the annotated tPNf frame (29 h)."
+  },
+  "RM126-5": {
+   "defects": [
+    "annotation_behind",
+    "heavy_fragmentation"
+   ],
+   "note": "Three to four cells with fragments at the annotated t2 frame (36 h)."
+  },
+  "AAL839-6": {
+   "defects": [
+    "annotation_behind",
+    "embryo_absent_late"
+   ],
+   "note": "About four cells at the annotated tPNf frame (22 h); no embryo in the well at annotated tB (107 h)."
+  },
+  "DHDPI042-6": {
+   "defects": [
+    "annotation_behind",
+    "embryo_absent_late"
+   ],
+   "note": "Two to three cells at the annotated tPNf frame (24 h); the well is empty at annotated tM (89 h) and tB (99 h)."
+  },
+  "DC307-1": {
+   "defects": [
+    "annotation_behind",
+    "out_of_focus_late"
+   ],
+   "note": "Two cells at the annotated tPNf frame (31 h); annotated tB (120 h) is a featureless blur."
+  },
+  "RM126-6": {
+   "defects": [
+    "embryo_absent_late"
+   ],
+   "note": "The well is empty at annotated tB (99 h)."
+  },
+  "GM456-3": {
+   "defects": [
+    "no_division",
+    "embryo_absent_late"
+   ],
+   "note": "Still one cell at annotated t4 (39 h); from 53 h the frames are a featureless blur with no embryo visible, annotated t8 and tM."
+  },
+  "BC396-1": {
+   "defects": [
+    "heavy_fragmentation"
+   ],
+   "note": "From 36 h the embryo is a mass of fragments; stage not readable."
+  },
+  "DSE41-2": {
+   "defects": [
+    "abrupt_cleavage",
+    "out_of_focus_late"
+   ],
+   "note": "One cell at 31.6 h (RUN52), a fragmented many-celled mass by 32.4 h (RUN55); the frames are continuous, so this is the embryo, not a recording gap. Annotated tPNf then t6 directly. Annotated tEB (124 h) is out of focus."
+  },
+  "OC110-5": {
+   "defects": [
+    "embryo_absent_late"
+   ],
+   "note": "Four cells visible at 53 h; from 75 h to 142 h the well is a featureless blur, and all of it is annotated t8, about 70 hours of 8-cell labels on frames with no embryo."
+  },
+  "DV116-3": {
+   "defects": [
+    "embryo_absent_late"
+   ],
+   "note": "Embryo visible to t5 (48 h); from 72 h to 141 h the well is a featureless blur, annotated t8 throughout."
+  },
+  "GC340-1": {
+   "defects": [
+    "embryo_absent_late"
+   ],
+   "note": "Embryo visible at t2 (30 h); empty well from tSB (97 h) to tEB (112 h), before any hatching."
+  },
+  "QC267-8": {
+   "defects": [
+    "embryo_absent_late"
+   ],
+   "note": "Embryo visible at t2 (27 h); a featureless disc from 94 h to 100 h, annotated tM."
+  },
+  "FV709-11": {
+   "defects": [
+    "embryo_absent_late"
+   ],
+   "note": "Embryo visible at t5 (48 h); featureless well from 96 h to 100 h, annotated tSB."
+  },
+  "PO13-3": {
+   "defects": [
+    "embryo_absent_late"
+   ],
+   "note": "Embryo visible at t2 (31 h); featureless well from 99 h to 105 h, annotated tSB."
+  },
+  "PMDPI029-1-8": {
+   "defects": [
+    "embryo_absent_late"
+   ],
+   "note": "Embryo visible at t2 (38 h); featureless well from 124 h to 138 h, annotated tB."
+  },
+  "ST586-7": {
+   "defects": [
+    "embryo_absent_late"
+   ],
+   "note": "Normal to tSB (115 h); at annotated tB (141 h) the well is featureless."
+  },
+  "RM126-4": {
+   "defects": [
+    "embryo_absent_late"
+   ],
+   "note": "Expanded blastocyst at 114 h; the well is empty at 141 h, annotated tEB; possibly hatched out of view."
+  },
+  "RM126-8": {
+   "defects": [
+    "embryo_absent_late"
+   ],
+   "note": "Empty well from 122 h to 141 h, annotated tEB; possibly hatched out of view."
+  },
+  "RM126-9": {
+   "defects": [
+    "embryo_absent_late"
+   ],
+   "note": "Empty well from 122 h to 141 h, annotated tEB; possibly hatched out of view."
+  },
+  "LM184-4": {
+   "defects": [
+    "embryo_absent_late"
+   ],
+   "note": "Empty well from 122 h to 140 h, annotated tEB; possibly hatched out of view."
+  },
+  "PMDPI029-1-9": {
+   "defects": [
+    "out_of_focus_late"
+   ],
+   "note": "Frames from 133 h to 142 h, annotated tHB, are blurred."
+  },
+  "AM365-7": {
+   "defects": [
+    "out_of_focus_mid"
+   ],
+   "note": "Embryo out of focus from 74 h to 90 h, annotated t9+ and tM."
+  },
+  "BC277-10": {
+   "defects": [
+    "dark_frames"
+   ],
+   "note": "Under-exposed, near-black frames from 40 h to 49 h, annotated t2 and t4."
+  },
+  "BG201-1": {
+   "defects": [
+    "dark_frames"
+   ],
+   "note": "Under-exposed frames from 55 h to 70 h, annotated t4."
+  },
+  "FM864-7": {
+   "defects": [
+    "dark_frames"
+   ],
+   "note": "Under-exposed frames from 60 h to 67 h, annotated t4."
+  },
+  "DSM138-5": {
+   "defects": [
+    "dark_frames"
+   ],
+   "note": "Under-exposed frames from 58 h to 67 h, annotated t4."
+  },
+  "BS777-8": {
+   "defects": [
+    "dark_frames"
+   ],
+   "note": "Near-black frames from 104 h to 113 h, annotated tM."
+  },
+  "TM312-2": {
+   "defects": [
+    "dark_frames"
+   ],
+   "note": "Dark, low-contrast frames from 99 h to 113 h, annotated t9+ and tM."
+  },
+  "BE327-2": {
+   "defects": [
+    "dark_frames",
+    "embryo_absent_late"
+   ],
+   "note": "A near-black frame around 56 h (annotated t4); the well is empty at 120 h, annotated tEB."
+  },
+  "MAS203-4": {
+   "defects": [
+    "dark_frames"
+   ],
+   "note": "An exposure-artefact frame around 59 h, annotated t3, in which the embryo is barely visible."
+  }
+ }
+}

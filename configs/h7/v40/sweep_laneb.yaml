@@ -1,0 +1,23 @@
+experiments:
+- config: configs/h7/v40/resnet18_none_adamw_split0.yaml
+  seed: 1
+- config: configs/h7/v40/resnet18_none_adamw_split1.yaml
+  seed: 0
+- config: configs/h7/v40/resnet18_none_adamw_split1.yaml
+  seed: 2
+- config: configs/h7/v4/resnet18_none_split1.yaml
+  seed: 2
+- config: configs/h7/v40/resnet18_none_adamw_split2.yaml
+  seed: 1
+- config: configs/h7/v4/resnet18_none_split2.yaml
+  seed: 1
+- config: configs/h7/v40/resnet18_none_adamw_split3.yaml
+  seed: 0
+- config: configs/h7/v40/resnet18_none_adamw_split3.yaml
+  seed: 2
+- config: configs/h7/v4/resnet18_none_split3.yaml
+  seed: 2
+- config: configs/h7/v40/resnet18_none_adamw_split4.yaml
+  seed: 1
+- config: configs/h7/v4/resnet18_none_split4.yaml
+  seed: 1

@@ -1,0 +1,4 @@
+# cross-focal transformer seeds 1,2 (GPU0). User go 2026-09-14.
+experiments:
+  - {config: configs/h7/v9/resnet18_transformer_L16_crossfocal7_evalfix_split0.yaml, seed: 1}
+  - {config: configs/h7/v9/resnet18_transformer_L16_crossfocal7_evalfix_split0.yaml, seed: 2}

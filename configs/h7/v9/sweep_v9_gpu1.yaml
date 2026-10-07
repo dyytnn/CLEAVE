@@ -1,0 +1,5 @@
+# crossfocal half (GPU1)
+experiments:
+  - {config: configs/h7/v9/resnet18_transformer_L16_crossfocal7_evalfix_split0.yaml, seed: 0}
+  - {config: configs/h7/v9/resnet18_lstm_L8_crossfocal7_split0.yaml, seed: 0}
+  - {config: configs/h7/v9/resnet18_lstm_L8_hires448_crossfocal7_split0.yaml, seed: 0}

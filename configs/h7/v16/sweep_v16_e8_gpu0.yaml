@@ -1,0 +1,5 @@
+# E8: 7-plane stacked transformer, fold 0, 3 seeds -- fusion-mechanism control (chained after v16 gpu0)
+experiments:
+  - {config: configs/h7/v16/resnet18_transformer_L16_multifocal7_evalfix_split0.yaml, seed: 0}
+  - {config: configs/h7/v16/resnet18_transformer_L16_multifocal7_evalfix_split0.yaml, seed: 1}
+  - {config: configs/h7/v16/resnet18_transformer_L16_multifocal7_evalfix_split0.yaml, seed: 2}
