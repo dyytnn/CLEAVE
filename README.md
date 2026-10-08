@@ -5,7 +5,7 @@ morphokinetic phase recognition, and the corrected protocol that came out of it.
 
 Code and data artefacts for:
 
-> Duy Tan Nguyen, Phuong Huy Tran, The Bao Pham, Ngoc Thanh Sang Vu. *CLEAVE: protocol limitations, suspected label
+> Nguyen Duy Tan, Phuong Huy Tran, The Bao Pham, Ngoc Thanh Sang Vu. *CLEAVE: protocol limitations, suspected label
 > mismatches and a cell-counting ceiling in a public benchmark for embryo morphokinetic phase recognition.* Submitted to *Medical Image Analysis*, 2026.
 
 The benchmark audited here is the Nantes time-lapse dataset (704 EmbryoScope videos, seven focal planes, sixteen

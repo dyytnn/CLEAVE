@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "If you use CLEAVE, please cite the article below and the Nantes dataset."
 title: "CLEAVE: protocol limitations, suspected label mismatches and a cell-counting ceiling in a public benchmark for embryo morphokinetic phase recognition"
 authors:
-  - family-names: Nguyen
-    given-names: Duy Tan
+  - family-names: Duy Tan
+    given-names: Nguyen
     affiliation: "Faculty of Information Technology, Saigon University"
     orcid: "https://orcid.org/0009-0009-5863-9003"
   - family-names: Tran
