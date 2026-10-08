@@ -87,9 +87,9 @@ def fig_defects(device, skip_gpu):
     ax.hist(lp, bins=np.arange(lp.min() - 0.5, lp.max() + 1.5), color="#bbbbbb", edgecolor="white")
     ax.set_ylim(0, ax.get_ylim()[1] * 1.25)  # headroom so the annotations below don't sit on top of the tallest bars
     ax.axvline(obs, color=C_CF, lw=1.5); ax.text(obs + 2, ax.get_ylim()[1] * 0.94, f"released fold 0\n({obs} of {n_pat})", color=C_CF, fontsize=7, va="top")
-    ax.axvline(0, color=C_TR, lw=1.5); ax.text(1.5, ax.get_ylim()[1] * 0.94, "patient-\ngrouped", color=C_TR, fontsize=7, va="top")
+    ax.axvline(0, color=C_TR, lw=1.5); ax.text(1.5, ax.get_ylim()[1] * 0.94, "code-\ngrouped", color=C_TR, fontsize=7, va="top")
     ax.set_xlim(-2, lp.max() + 2)
-    ax.set_xlabel(f"patients in >1 partition ({sim['seeds']} random video-level splits,\nreleased 564/70/70 shape)")
+    ax.set_xlabel(f"codes in >1 partition ({sim['seeds']} random video-level splits,\nreleased 564/70/70 shape)")
     ax.set_ylabel("splits")
     # c: split mechanisms
     ax = axes[2]; panel_label(ax, "c")
@@ -102,7 +102,7 @@ def fig_defects(device, skip_gpu):
     x = 0
     for label, vals in groups:
         cols = [C_TR, C_REF, C_CF] if len(vals) == 3 else [C_REF, C_CF]
-        names = ["patient-grouped", "video-level fold 0", "image-level"] if len(vals) == 3 else ["video-level fold 0", "image-level"]
+        names = ["cycle-code-grouped", "video-level fold 0", "image-level"] if len(vals) == 3 else ["video-level fold 0", "image-level"]
         for (v, s), col, nm in zip(vals, cols, names):
             if not np.isnan(v):
                 ax.bar(x, v, yerr=s if s else None, color=col, width=0.8, label=nm)

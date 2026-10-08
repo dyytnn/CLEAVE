@@ -33,8 +33,8 @@ def main() -> None:
     exposed = float(nums["leakcouple_pooled_pct"])          # same number as the abstract's macro
     ax.bar([0, 1], [exposed, 0.0], color=[C_REF, C_CF], width=0.6)
     ax.set_xticks([0, 1])
-    ax.set_xticklabels(["released\nfolds", "patient-\ngrouped"])
-    ax.set_ylabel("test embryos with a\nsibling in training (%)")
+    ax.set_xticklabels(["released\nfolds", "code-\ngrouped"])
+    ax.set_ylabel("test videos sharing a\ncode with training (%)")
     ax.set_ylim(0, 40)
     ax.text(1, 1.5, "0", ha="center", color=C_CF, fontweight="bold")
     ax.set_title("1  Protocol", loc="left", fontweight="bold")

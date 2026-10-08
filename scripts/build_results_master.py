@@ -56,8 +56,8 @@ def split_family(cfg: dict) -> tuple[str, str]:
         # v1 keeps the bare key it has always had; a later version gets its own so the two are never pooled
         ver = sp.rsplit("grouped_", 1)[-1] if "grouped_" in sp else "v1"
         if ver != "v1":
-            return f"patient-grouped {ver} (CLEAVE)", f"grouped_{ver}"
-        return "patient-grouped (CLEAVE)", "grouped"
+            return f"code-grouped {ver} (CLEAVE)", f"grouped_{ver}"
+        return "code-grouped (CLEAVE)", "grouped"
     if "random" in sp:
         return "random 70/10/20 video split (EmbryoDiff-style)", "random73"
     return sp, sp
@@ -285,10 +285,10 @@ def write_ed_table1(df: pd.DataFrame) -> None:
     order = {"fold0": 0, "fold1": 1, "fold2": 1, "fold3": 1, "fold4": 1, "grouped": 2, "grouped_v2": 3,
              "grouped_v2_trainclean_v1": 3.5, "grouped_v2_trainclean_v3": 3.6, "random73": 4, "image": 5}
     blocks = {0: "Official fold 0 (selection fold for every ablation)", 1: "Official folds 1--4",
-              2: "Patient-grouped split, cycle level (\\texttt{nantes\\_grouped\\_v1})",
-              3: "Patient-grouped split, couple level (\\texttt{nantes\\_grouped\\_v2}, recommended)",
-              3.5: "The same split without every video of the first, untiered defect log in training (\\texttt{nantes\\_grouped\\_v2\\_trainclean\\_v1})",
-              3.6: "The same split without tier A of the defect log in training, tier-B labels cut (\\texttt{nantes\\_grouped\\_v2\\_trainclean\\_v3})",
+              2: "Code-grouped split, cycle code (\\texttt{nantes\\_grouped\\_v1})",
+              3: "Code-grouped split, code level (\\texttt{nantes\\_grouped\\_v2}, recommended)",
+              3.5: "The same split without every video of the first, untiered issue log in training (\\texttt{nantes\\_grouped\\_v2\\_trainclean\\_v1})",
+              3.6: "The same split without tier A of the issue log in training, tier-B labels cut (\\texttt{nantes\\_grouped\\_v2\\_trainclean\\_v3})",
               4: "Random 70/10/20 video split, 15 classes (EmbryoDiff-style)",
               5: "Image-level split (frames of every video in train and test; leakage demonstration, not comparable)"}
     # the optimiser follows the head family in the common recipe (Methods); v39 showed that it, not the head, carries the
@@ -461,8 +461,8 @@ def fold_table(df: pd.DataFrame, numbers: dict) -> None:
         numbers["cf_pooled_dpt"] = f"{tot['d']:+.3f}"; numbers["cf_pooled_lo"] = f"{tot['lo']:+.3f}"; numbers["cf_pooled_hi"] = f"{tot['hi']:+.3f}"
         numbers["cf_pooled_n"] = str(tot["nvid"]); numbers["cf_pooled_share_pos"] = f"{(allv > 0).mean() * 100:.0f}"
         numbers["cf_pooled_npat"] = str(tot["npat"])
-        L.append(f"\\multicolumn{{10}}{{l}}{{\\footnotesize pooled per-video paired difference, cross-focal $-$ reference, seed-averaged, over the five test partitions ($n={tot['npat']}$ patients, {tot['nvid']} videos): "
-                 f"$\\Delta p_t={tot['d']:+.3f}$ (95\\,\\% CI ${tot['lo']:+.3f}$ to ${tot['hi']:+.3f}$; patients resampled within each fold, seeds within each arm)}}\\\\")
+        L.append(f"\\multicolumn{{10}}{{l}}{{\\footnotesize pooled per-video paired difference, cross-focal $-$ reference, seed-averaged, over the five test partitions ($n={tot['npat']}$ code-fold clusters, {tot['nvid']} videos): "
+                 f"$\\Delta p_t={tot['d']:+.3f}$ (95\\,\\% CI ${tot['lo']:+.3f}$ to ${tot['hi']:+.3f}$; codes resampled within each fold, seeds within each arm)}}\\\\")
     # attribution: one change per step along CHAIN, pooled over the five test partitions, seed-aware joint interval
     if all(t in attr for t in STEP_TAGS):
         L.append("\\midrule")
@@ -474,13 +474,13 @@ def fold_table(df: pd.DataFrame, numbers: dict) -> None:
             est = f"${r['d']:+.3f}$ [${r['lo']:+.3f}$, ${r['hi']:+.3f}$]; {r['wins']}/5; " + ("$p_{\\mathrm{Holm}}<0.001$" if ph < 0.001 else f"$p_{{\\mathrm{{Holm}}}}={ph:.2f}$")
             L.append(f"{esc(label)} & & {cells} & \\multicolumn{{3}}{{l}}{{{est}}} \\\\")
         t = attr["total"]
-        L.append(f"\\multicolumn{{10}}{{l}}{{\\footnotesize attribution: per-video $p_t$ differences, seed-averaged, pooled over the five test partitions ({t['nvid']} videos of {t['ncouples']} couples, {t['npat']} couple-fold clusters); "
-                 f"95\\,\\% interval from one joint bootstrap that resamples couples within each fold and the seeds of each configuration; $k/5$ = folds on which the step is positive; "
+        L.append(f"\\multicolumn{{10}}{{l}}{{\\footnotesize attribution: per-video $p_t$ differences, seed-averaged, pooled over the five test partitions ({t['nvid']} videos of {t['ncouples']} codes, {t['npat']} code-fold clusters); "
+                 f"95\\,\\% interval from one joint bootstrap that resamples codes within each fold and the seeds of each configuration; $k/5$ = folds on which the step is positive; "
                  f"$p_{{\\mathrm{{Holm}}}}$ = bootstrap $p$ adjusted over the five steps. The steps telescope, so they sum to the total by construction and follow one order of the changes; "
                  f"every seven-plane configuration trains at batch 2, the one- and three-plane transformers at batch 4.}}\\\\")
     cap = ("\\textbf{Five official folds.} Test partition of each fold; cell = mean over seeds (\\scriptsize$\\pm$ sample s.d.). Seed counts vary by row and are given in the seeds column; the best model in each fold column and in the summary $p_t$ column is in bold. "
-           "Fold~0 is the fold on which every configuration in this study was selected and is marked $^{\\dagger}$; folds 1--4 were run after selection and carry the confirmatory statistic. "
-           "Summary columns: mean $\\pm$ s.d.\\ over the five fold means. Paired tests are two-tailed at $\\alpha=0.05$; the fold-level $t$-test treats folds as independent although they share training patients (Methods).")
+           "Fold~0 is the fold on which every configuration in this study was selected and is marked $^{\\dagger}$; folds 1--4 were run after selection and carry the post-selection statistic. "
+           "Summary columns: mean $\\pm$ s.d.\\ over the five fold means. Paired tests are two-tailed at $\\alpha=0.05$; the fold-level $t$-test treats folds as independent although they share training videos and code groups (Methods).")
     body_l, notes_l = footer_to_notes(lines + L)
     out = ["\\begin{table*}[t]", "\\centering\\small\\setlength{\\tabcolsep}{4pt}", "\\caption{" + cap + "}\\label{tab:folds}",
            "\\resizebox{\\textwidth}{!}{\\begin{tabular}{L{4.6cm}cccccccccc}", "\\toprule",
@@ -1217,17 +1217,17 @@ def defect_numbers(numbers: dict) -> None:
     esc_ = lambda t: t.replace("%", "\\%").replace("&", "\\&").replace("_", "\\_").replace("~", "$\\sim$")
     L = ["\\begin{footnotesize}",
          "\\begin{longtable}{@{}>{\\raggedright\\arraybackslash}p{2.1cm}>{\\centering\\arraybackslash}p{0.6cm}>{\\raggedright\\arraybackslash}p{3.0cm}>{\\raggedright\\arraybackslash}p{9.0cm}@{}}",
-         "\\caption{\\textbf{Per-video defect log.} Tier A: the label is not about the image (removed from training in the "
+         "\\caption{\\textbf{Per-video issue log.} Tier A: the label is not about the image (removed from training in the "
          "cleaned split); B: image artefact with a correct label (kept; for an embryo removed from the well the label is cut "
          "where the well empties); C: atypical biology (kept). Descriptions of inspected videos are what is visible, not a "
          "guess at the cause. Timeline mismatches were found by the out-of-fold image--annotation alignment audit and the release's time files (Methods): $a$ is the "
          "fitted number of annotation frames per image and the error is the mean phase-order difference between a per-frame "
          "classifier and the annotation, pairing image $k$ with annotation frame $k$ versus with the fitted frame. Released "
-         "as \\texttt{nantes\\_video\\_defects\\_v4.json}. Basis: what a defect rests on -- AI-assisted inspection of the frames "
+         "as \\texttt{nantes\\_video\\_defects\\_v4.json}. Basis: what an issue rests on -- AI-assisted inspection of the frames "
          "(a vision-capable language model under the authors' direction), or, for timeline mismatches not inspected, agreement of the "
          "out-of-fold alignment and the time-file signature.}\\label{tab:defect_log}\\\\",
-         "\\toprule", "Video & Tier & Defect & What is visible \\\\", "\\midrule", "\\endfirsthead",
-         "\\toprule", "Video & Tier & Defect & What is visible \\\\", "\\midrule", "\\endhead", "\\bottomrule", "\\endlastfoot"]
+         "\\toprule", "Video & Tier & Issue & What is visible \\\\", "\\midrule", "\\endfirsthead",
+         "\\toprule", "Video & Tier & Issue & What is visible \\\\", "\\midrule", "\\endhead", "\\bottomrule", "\\endlastfoot"]
     for v, rec in sorted(vids.items(), key=lambda kv: (kv[1]["tier"], kv[1]["defects"][0], kv[0])):
         note = rec["note"]
         if "timeline" in rec:
@@ -1290,11 +1290,11 @@ def _paired_footnote(df: pd.DataFrame, numbers: dict, foot: list, ver: str, tag:
     numbers[f"{tag}_n"] = str(len(d)); numbers[f"{tag}_wins"] = str(wins); numbers[f"{tag}_df"] = str(len(per_pat) - 1)
     numbers[f"{tag}_npat"] = str(n_pat)
     numbers[f"{tag}_p"] = ptex
-    name = "patient-grouped split" if ver == "v1" else f"couple-level split ({ver})"
+    name = "cycle-code-grouped split" if ver == "v1" else f"code-grouped split ({ver})"
     foot.append(f"\\multicolumn{{10}}{{l}}{{\\footnotesize per-video paired bootstrap on the {name}, "
-                f"cross-focal $-$ reference, seed-averaged, resampling patients and seeds ($n={n_pat}$ patients, "
+                f"cross-focal $-$ reference, seed-averaged, resampling code groups and seeds ($n={n_pat}$ code groups, "
                 f"{len(d)} videos): $\\Delta p_t={m:+.3f}$ "
-                f"(95\\,\\% CI ${lo:+.3f}$ to ${hi:+.3f}$), paired $t({len(per_pat) - 1})$ $p={ptex}$, wins {wins}/{n_pat} patients}}\\\\")
+                f"(95\\,\\% CI ${lo:+.3f}$ to ${hi:+.3f}$), paired $t({len(per_pat) - 1})$ $p={ptex}$, wins {wins}/{n_pat} code groups}}\\\\")
 
 
 def bold_cell(c: str) -> str:
@@ -1309,7 +1309,7 @@ def bold_cell(c: str) -> str:
 
 
 def protocol_table(df: pd.DataFrame, numbers: dict) -> None:
-    """Main Table 1: reference models under the released protocol (fold 0; five-fold mean) and the corrected patient-grouped split."""
+    """Main Table 1: reference models under the released protocol (fold 0; five-fold mean) and the corrected code-grouped split."""
     def cell(exp, key, nd=3):
         if exp is None: return "--", 0
         r = df[df.experiment == exp][key].dropna()
@@ -1338,7 +1338,7 @@ def protocol_table(df: pd.DataFrame, numbers: dict) -> None:
             numbers[f"grouped{tag}_pt"] = f"{rg.mean():.3f}"; numbers[f"grouped{tag}_pt_sd"] = f"{rg.std(ddof=1):.3f}" if ng > 1 else ""; numbers[f"grouped{tag}_n"] = str(ng)
     cap = ("\\textbf{Reference models under the released and the corrected protocol.} Released protocol: official video-level fold 0 (67 test videos; the fold on which "
            "every configuration in this study was selected) and the mean $\\pm$ s.d.\\ over the five official fold means (Table~\\ref{tab:folds}). Corrected protocol "
-           "(CLEAVE): patient-grouped split (\\texttt{nantes\\_grouped\\_v1}, \\numgroupedTest{} test videos, grouped at treatment-cycle level; four couples straddle a partition at couple level and \\numgvOneexposed{} test video is exposed, Methods). "
+           "(CLEAVE): code-grouped split (\\texttt{nantes\\_grouped\\_v1}, \\numgroupedTest{} test videos, grouped by cycle code; four codes straddle a partition at code level and \\numgvOneexposed{} test video is exposed, Methods). "
            "$n$: seeds. Cells are mean $\\pm$ sample s.d.\\ over seeds, single value when $n=1$. Test sets differ between protocols, so the two blocks are not paired; the best value in each metric column is in bold. "
            "The grouped-split cells are not an estimate of leakage inflation, because the two protocols also differ in which videos are tested and in how many are trained on; that estimate comes from the paired design of Results~\\S\\ref{sec:structural}.")
     # bold the best value in each metric column: highest p_t and F1@50, lowest timing error
@@ -1365,7 +1365,7 @@ def protocol_table(df: pd.DataFrame, numbers: dict) -> None:
     body_p, notes_p = footer_to_notes(rows)
     out = ["\\begin{table*}[t]", "\\centering\\small\\setlength{\\tabcolsep}{4pt}", "\\caption{" + cap + "}\\label{tab:protocols}",
            "\\resizebox{\\textwidth}{!}{\\begin{tabular}{L{5.6cm}cccccccccc}", "\\toprule",
-           " & \\multicolumn{4}{c}{released protocol, fold 0} & five folds & \\multicolumn{4}{c}{corrected protocol (patient-grouped)} \\\\",
+           " & \\multicolumn{4}{c}{released protocol, fold 0} & five folds & \\multicolumn{4}{c}{corrected protocol (code-grouped)} \\\\",
            "\\cmidrule(lr){2-5}\\cmidrule(lr){6-6}\\cmidrule(lr){7-10}",
            "Model & $n$ & $p_t$ & F1@50 & MAE (h) & $p_t$ & $n$ & $p_t$ & F1@50 & MAE (h) \\\\", "\\midrule"] + body_p + ["\\bottomrule", "\\end{tabular}}"] + notes_block(notes_p) + ["\\end{table*}"]
     (TAB / "table_protocols.tex").write_text("\n".join(out) + "\n")
